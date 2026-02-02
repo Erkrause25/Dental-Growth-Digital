@@ -1,0 +1,1442 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resources for Parents | Happy Smiles Pediatric Dentistry</title>
+    <meta name="description" content="Helpful dental care resources for parents. Learn about dental milestones, brushing tips, diet advice, and FAQs from Happy Smiles Pediatric Dentistry in Cherry Hill, NJ.">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700;800&family=Open+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #6366f1;
+            --primary-dark: #4f46e5;
+            --primary-light: #e0e7ff;
+            --secondary: #14b8a6;
+            --secondary-light: #ccfbf1;
+            --accent: #f472b6;
+            --accent-light: #fce7f3;
+            --warm: #fbbf24;
+            --warm-light: #fef3c7;
+            --text-dark: #1e293b;
+            --text-mid: #475569;
+            --text-light: #64748b;
+            --white: #ffffff;
+            --cream: #fefdfb;
+            --gray-50: #f8fafc;
+            --gray-100: #f1f5f9;
+            --gray-200: #e2e8f0;
+            --gray-300: #cbd5e1;
+            --shadow-sm: 0 1px 2px rgba(0,0,0,0.05);
+            --shadow-md: 0 4px 6px -1px rgba(0,0,0,0.1);
+            --shadow-lg: 0 10px 15px -3px rgba(0,0,0,0.1);
+            --shadow-xl: 0 20px 25px -5px rgba(0,0,0,0.1);
+            --radius-sm: 8px;
+            --radius-md: 12px;
+            --radius-lg: 16px;
+            --radius-xl: 24px;
+        }
+
+        body {
+            font-family: 'Open Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+            color: var(--text-mid);
+            line-height: 1.6;
+            background: var(--white);
+            -webkit-font-smoothing: antialiased;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Nunito', sans-serif;
+            color: var(--text-dark);
+            line-height: 1.2;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* Announcement Bar */
+        .announcement {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            color: var(--white);
+            padding: 10px 24px;
+            text-align: center;
+            font-size: 14px;
+            font-weight: 500;
+        }
+
+        .announcement a {
+            color: var(--white);
+            text-decoration: underline;
+            margin-left: 8px;
+        }
+
+        /* Navigation */
+        .nav {
+            background: var(--white);
+            padding: 16px 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            text-decoration: none;
+        }
+
+        .logo-icon {
+            width: 48px;
+            height: 48px;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%);
+            border-radius: var(--radius-md);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+        }
+
+        .logo-text {
+            font-family: 'Nunito', sans-serif;
+            font-weight: 800;
+            font-size: 20px;
+            color: var(--text-dark);
+        }
+
+        .logo-text span {
+            color: var(--primary);
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 32px;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-mid);
+            font-weight: 600;
+            font-size: 15px;
+            transition: color 0.2s;
+        }
+
+        .nav-links a:hover,
+        .nav-links a.active {
+            color: var(--primary);
+        }
+
+        .nav-cta {
+            background: var(--primary);
+            color: var(--white) !important;
+            padding: 12px 24px;
+            border-radius: var(--radius-md);
+            font-weight: 700;
+            transition: all 0.2s;
+        }
+
+        .nav-cta:hover {
+            background: var(--primary-dark);
+            transform: translateY(-1px);
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 8px;
+        }
+
+        .mobile-menu-btn svg {
+            width: 28px;
+            height: 28px;
+            stroke: var(--text-dark);
+        }
+
+        /* Page Hero */
+        .page-hero {
+            background: linear-gradient(180deg, var(--cream) 0%, var(--white) 100%);
+            padding: 80px 0;
+            text-align: center;
+        }
+
+        .page-hero h1 {
+            font-size: 48px;
+            font-weight: 800;
+            margin-bottom: 16px;
+            letter-spacing: -1px;
+        }
+
+        .page-hero h1 span {
+            color: var(--primary);
+        }
+
+        .page-hero p {
+            font-size: 18px;
+            color: var(--text-light);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* Quick Links */
+        .quick-links {
+            padding: 60px 0;
+            background: var(--white);
+            border-bottom: 1px solid var(--gray-200);
+        }
+
+        .links-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+        }
+
+        .link-card {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            padding: 20px 24px;
+            background: var(--gray-50);
+            border-radius: var(--radius-lg);
+            text-decoration: none;
+            transition: all 0.2s;
+            border: 1px solid transparent;
+        }
+
+        .link-card:hover {
+            background: var(--white);
+            border-color: var(--primary);
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-md);
+        }
+
+        .link-icon {
+            width: 48px;
+            height: 48px;
+            border-radius: var(--radius-sm);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .link-icon svg {
+            width: 24px;
+            height: 24px;
+            stroke-width: 2;
+        }
+
+        .link-icon.purple { background: var(--primary-light); }
+        .link-icon.purple svg { stroke: var(--primary); }
+        .link-icon.pink { background: var(--accent-light); }
+        .link-icon.pink svg { stroke: var(--accent); }
+        .link-icon.teal { background: var(--secondary-light); }
+        .link-icon.teal svg { stroke: var(--secondary); }
+        .link-icon.yellow { background: var(--warm-light); }
+        .link-icon.yellow svg { stroke: #d97706; }
+
+        .link-card span {
+            font-weight: 700;
+            color: var(--text-dark);
+            font-size: 15px;
+        }
+
+        /* Section Styles */
+        .section {
+            padding: 100px 0;
+        }
+
+        .section:nth-child(even) {
+            background: var(--gray-50);
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .section-label {
+            display: inline-block;
+            font-size: 13px;
+            font-weight: 700;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            color: var(--primary);
+            margin-bottom: 12px;
+        }
+
+        .section-header h2 {
+            font-size: 40px;
+            font-weight: 800;
+            margin-bottom: 16px;
+        }
+
+        .section-header p {
+            font-size: 18px;
+            color: var(--text-light);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* Milestones Timeline */
+        .milestones-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 24px;
+        }
+
+        .milestone-card {
+            background: var(--white);
+            border-radius: var(--radius-lg);
+            padding: 32px;
+            border: 1px solid var(--gray-200);
+        }
+
+        .milestone-age {
+            display: inline-block;
+            background: var(--primary);
+            color: var(--white);
+            padding: 6px 16px;
+            border-radius: 100px;
+            font-size: 14px;
+            font-weight: 700;
+            margin-bottom: 16px;
+        }
+
+        .milestone-card h3 {
+            font-size: 20px;
+            font-weight: 700;
+            margin-bottom: 12px;
+        }
+
+        .milestone-card p {
+            font-size: 15px;
+            color: var(--text-light);
+            line-height: 1.7;
+            margin-bottom: 16px;
+        }
+
+        .milestone-tips {
+            background: var(--gray-50);
+            padding: 16px;
+            border-radius: var(--radius-md);
+        }
+
+        .milestone-tips strong {
+            display: block;
+            font-size: 13px;
+            color: var(--text-dark);
+            margin-bottom: 8px;
+        }
+
+        .milestone-tips ul {
+            list-style: none;
+            font-size: 14px;
+            color: var(--text-mid);
+        }
+
+        .milestone-tips li {
+            padding: 4px 0;
+            padding-left: 20px;
+            position: relative;
+        }
+
+        .milestone-tips li::before {
+            content: '•';
+            position: absolute;
+            left: 0;
+            color: var(--primary);
+        }
+
+        /* Brushing Guide */
+        .brushing-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .brushing-image {
+            height: 400px;
+            background: linear-gradient(135deg, var(--accent-light) 0%, var(--primary-light) 100%);
+            border-radius: var(--radius-xl);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            border: 3px dashed var(--gray-300);
+        }
+
+        .brushing-image svg {
+            width: 56px;
+            height: 56px;
+            stroke: var(--text-light);
+            stroke-width: 1.5;
+            margin-bottom: 12px;
+        }
+
+        .brushing-image span {
+            font-size: 13px;
+            color: var(--text-light);
+        }
+
+        .brushing-content h2 {
+            font-size: 36px;
+            font-weight: 800;
+            margin-bottom: 20px;
+        }
+
+        .brushing-content > p {
+            font-size: 17px;
+            color: var(--text-light);
+            margin-bottom: 24px;
+            line-height: 1.8;
+        }
+
+        .brushing-steps {
+            list-style: none;
+        }
+
+        .brushing-steps li {
+            display: flex;
+            gap: 16px;
+            padding: 16px 0;
+            border-bottom: 1px solid var(--gray-200);
+        }
+
+        .brushing-steps li:last-child {
+            border-bottom: none;
+        }
+
+        .step-number {
+            width: 32px;
+            height: 32px;
+            background: var(--primary);
+            color: var(--white);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 14px;
+            flex-shrink: 0;
+        }
+
+        .step-content strong {
+            display: block;
+            color: var(--text-dark);
+            margin-bottom: 4px;
+        }
+
+        .step-content span {
+            font-size: 14px;
+            color: var(--text-light);
+        }
+
+        /* Diet Section */
+        .diet-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 32px;
+        }
+
+        .diet-card {
+            background: var(--white);
+            border-radius: var(--radius-lg);
+            padding: 36px;
+            border: 1px solid var(--gray-200);
+        }
+
+        .diet-card.good {
+            border-left: 4px solid var(--secondary);
+        }
+
+        .diet-card.bad {
+            border-left: 4px solid var(--accent);
+        }
+
+        .diet-card h3 {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 22px;
+            font-weight: 700;
+            margin-bottom: 20px;
+        }
+
+        .diet-card h3 svg {
+            width: 28px;
+            height: 28px;
+        }
+
+        .diet-card.good h3 svg {
+            stroke: var(--secondary);
+        }
+
+        .diet-card.bad h3 svg {
+            stroke: var(--accent);
+        }
+
+        .diet-list {
+            list-style: none;
+        }
+
+        .diet-list li {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            padding: 12px 0;
+            font-size: 15px;
+            color: var(--text-mid);
+        }
+
+        .diet-list li svg {
+            width: 20px;
+            height: 20px;
+            flex-shrink: 0;
+            margin-top: 2px;
+        }
+
+        .diet-card.good .diet-list svg {
+            stroke: var(--secondary);
+        }
+
+        .diet-card.bad .diet-list svg {
+            stroke: var(--accent);
+        }
+
+        /* FAQ Section */
+        .faq-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .faq-item {
+            background: var(--white);
+            border-radius: var(--radius-lg);
+            margin-bottom: 16px;
+            border: 1px solid var(--gray-200);
+            overflow: hidden;
+        }
+
+        .faq-question {
+            padding: 24px 32px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .faq-question h3 {
+            font-size: 18px;
+            font-weight: 700;
+        }
+
+        .faq-question svg {
+            width: 24px;
+            height: 24px;
+            stroke: var(--text-light);
+        }
+
+        .faq-answer {
+            padding: 0 32px 24px;
+            font-size: 15px;
+            color: var(--text-light);
+            line-height: 1.7;
+        }
+
+        /* Emergency Info */
+        .emergency-section {
+            padding: 80px 0;
+            background: linear-gradient(135deg, var(--accent) 0%, #ec4899 100%);
+            color: var(--white);
+        }
+
+        .emergency-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .emergency-content h2 {
+            font-size: 36px;
+            font-weight: 800;
+            color: var(--white);
+            margin-bottom: 20px;
+        }
+
+        .emergency-content > p {
+            font-size: 17px;
+            opacity: 0.9;
+            margin-bottom: 24px;
+            line-height: 1.7;
+        }
+
+        .emergency-list {
+            list-style: none;
+        }
+
+        .emergency-list li {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 12px 0;
+            font-size: 16px;
+        }
+
+        .emergency-list li svg {
+            width: 24px;
+            height: 24px;
+            stroke: var(--white);
+            flex-shrink: 0;
+        }
+
+        .emergency-phone {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            background: var(--white);
+            padding: 32px;
+            border-radius: var(--radius-xl);
+            text-decoration: none;
+        }
+
+        .emergency-phone-icon {
+            width: 64px;
+            height: 64px;
+            background: var(--accent-light);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .emergency-phone-icon svg {
+            width: 32px;
+            height: 32px;
+            stroke: var(--accent);
+        }
+
+        .emergency-phone-text {
+            font-size: 14px;
+            color: var(--text-light);
+            margin-bottom: 4px;
+        }
+
+        .emergency-phone-number {
+            font-family: 'Nunito', sans-serif;
+            font-size: 28px;
+            font-weight: 800;
+            color: var(--text-dark);
+        }
+
+        /* CTA Section */
+        .cta {
+            padding: 100px 0;
+            background: var(--cream);
+            text-align: center;
+        }
+
+        .cta-container {
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .cta h2 {
+            font-size: 40px;
+            font-weight: 800;
+            margin-bottom: 16px;
+        }
+
+        .cta p {
+            font-size: 18px;
+            color: var(--text-light);
+            margin-bottom: 32px;
+        }
+
+        .btn-primary {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: var(--primary);
+            color: var(--white);
+            padding: 16px 32px;
+            border-radius: var(--radius-md);
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 16px;
+            transition: all 0.2s;
+        }
+
+        .btn-primary:hover {
+            background: var(--primary-dark);
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        /* Footer */
+        .footer {
+            background: var(--text-dark);
+            color: var(--white);
+            padding: 80px 0 32px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 48px;
+            margin-bottom: 48px;
+        }
+
+        .footer-brand .logo {
+            margin-bottom: 16px;
+        }
+
+        .footer-brand .logo-text {
+            color: var(--white);
+        }
+
+        .footer-brand p {
+            color: var(--gray-300);
+            font-size: 14px;
+            line-height: 1.7;
+            margin-bottom: 24px;
+        }
+
+        .footer-social {
+            display: flex;
+            gap: 12px;
+        }
+
+        .footer-social a {
+            width: 40px;
+            height: 40px;
+            background: rgba(255,255,255,0.1);
+            border-radius: var(--radius-sm);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: background 0.2s;
+        }
+
+        .footer-social a:hover {
+            background: var(--primary);
+        }
+
+        .footer-social svg {
+            width: 20px;
+            height: 20px;
+            stroke: var(--white);
+        }
+
+        .footer-column h4 {
+            font-size: 14px;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+            color: var(--white);
+            margin-bottom: 20px;
+        }
+
+        .footer-column a {
+            display: block;
+            color: var(--gray-300);
+            text-decoration: none;
+            font-size: 14px;
+            padding: 8px 0;
+            transition: color 0.2s;
+        }
+
+        .footer-column a:hover {
+            color: var(--white);
+        }
+
+        .footer-contact-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            margin-bottom: 16px;
+        }
+
+        .footer-contact-item svg {
+            width: 18px;
+            height: 18px;
+            stroke: var(--primary);
+            flex-shrink: 0;
+            margin-top: 2px;
+        }
+
+        .footer-contact-item span {
+            font-size: 14px;
+            color: var(--gray-300);
+            line-height: 1.5;
+        }
+
+        .footer-bottom {
+            padding-top: 32px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .footer-bottom p {
+            font-size: 13px;
+            color: var(--gray-300);
+        }
+
+        .footer-bottom-links {
+            display: flex;
+            gap: 24px;
+        }
+
+        .footer-bottom-links a {
+            font-size: 13px;
+            color: var(--gray-300);
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+
+        .footer-bottom-links a:hover {
+            color: var(--white);
+        }
+
+        /* Responsive */
+        @media (max-width: 1024px) {
+            .links-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .milestones-grid,
+            .diet-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .brushing-container,
+            .emergency-container {
+                grid-template-columns: 1fr;
+                gap: 48px;
+            }
+
+            .footer-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .announcement {
+                font-size: 13px;
+                padding: 8px 16px;
+            }
+
+            .nav-links {
+                display: none;
+            }
+
+            .mobile-menu-btn {
+                display: block;
+            }
+
+            .page-hero {
+                padding: 48px 0;
+            }
+
+            .page-hero h1 {
+                font-size: 32px;
+            }
+
+            .quick-links {
+                padding: 40px 0;
+            }
+
+            .links-grid {
+                grid-template-columns: 1fr;
+                gap: 12px;
+            }
+
+            .section {
+                padding: 64px 0;
+            }
+
+            .section-header h2,
+            .brushing-content h2,
+            .emergency-content h2,
+            .cta h2 {
+                font-size: 28px;
+            }
+
+            .emergency-section {
+                padding: 64px 0;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr;
+                gap: 32px;
+            }
+
+            .footer-bottom {
+                flex-direction: column;
+                gap: 16px;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Announcement Bar -->
+    <div class="announcement">
+        🎉 Now accepting new patients! Schedule your child's first visit today.
+        <a href="contact.html">Book Appointment →</a>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="nav">
+        <div class="container nav-container">
+            <a href="index.html" class="logo">
+                <div class="logo-icon">😊</div>
+                <span class="logo-text">Happy <span>Smiles</span></span>
+            </a>
+            <div class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="about.html">About Us</a>
+                <a href="services.html">Services</a>
+                <a href="first-visit.html">First Visit</a>
+                <a href="parents.html" class="active">For Parents</a>
+                <a href="contact.html" class="nav-cta">Book Appointment</a>
+            </div>
+            <button class="mobile-menu-btn" aria-label="Menu">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <line x1="3" y1="6" x2="21" y2="6"/>
+                    <line x1="3" y1="12" x2="21" y2="12"/>
+                    <line x1="3" y1="18" x2="21" y2="18"/>
+                </svg>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Page Hero -->
+    <section class="page-hero">
+        <div class="container">
+            <h1>Resources for <span>Parents</span></h1>
+            <p>Everything you need to know to help your child develop healthy dental habits that last a lifetime.</p>
+        </div>
+    </section>
+
+    <!-- Quick Links -->
+    <section class="quick-links">
+        <div class="container">
+            <div class="links-grid">
+                <a href="#milestones" class="link-card">
+                    <div class="link-icon purple">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                            <rect x="3" y="4" width="18" height="18" rx="2" ry="2"/>
+                            <line x1="16" y1="2" x2="16" y2="6"/>
+                            <line x1="8" y1="2" x2="8" y2="6"/>
+                            <line x1="3" y1="10" x2="21" y2="10"/>
+                        </svg>
+                    </div>
+                    <span>Dental Milestones</span>
+                </a>
+                <a href="#brushing" class="link-card">
+                    <div class="link-icon pink">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                            <path d="M12 2C8.5 2 6 4.5 6 7.5c0 2 1 3.5 2 4.5v8c0 1.1.9 2 2 2h4c1.1 0 2-.9 2-2v-8c1-1 2-2.5 2-4.5C18 4.5 15.5 2 12 2z"/>
+                        </svg>
+                    </div>
+                    <span>Brushing Guide</span>
+                </a>
+                <a href="#diet" class="link-card">
+                    <div class="link-icon teal">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                            <path d="M18 8h1a4 4 0 0 1 0 8h-1"/>
+                            <path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"/>
+                            <line x1="6" y1="1" x2="6" y2="4"/>
+                            <line x1="10" y1="1" x2="10" y2="4"/>
+                            <line x1="14" y1="1" x2="14" y2="4"/>
+                        </svg>
+                    </div>
+                    <span>Diet & Nutrition</span>
+                </a>
+                <a href="#faqs" class="link-card">
+                    <div class="link-icon yellow">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                            <circle cx="12" cy="12" r="10"/>
+                            <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/>
+                            <line x1="12" y1="17" x2="12.01" y2="17"/>
+                        </svg>
+                    </div>
+                    <span>FAQs</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Dental Milestones -->
+    <section class="section" id="milestones">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-label">Dental Development</div>
+                <h2>Dental Milestones by Age</h2>
+                <p>Understanding what to expect as your child's teeth develop helps you provide the best care at every stage.</p>
+            </div>
+            <div class="milestones-grid">
+                <div class="milestone-card">
+                    <span class="milestone-age">6-12 Months</span>
+                    <h3>First Teeth Emerge</h3>
+                    <p>Most babies get their first tooth around 6 months, usually a bottom front tooth. By their first birthday, they typically have 4-8 teeth.</p>
+                    <div class="milestone-tips">
+                        <strong>Care Tips:</strong>
+                        <ul>
+                            <li>Wipe gums with a soft, damp cloth after feedings</li>
+                            <li>Use a soft infant toothbrush when teeth appear</li>
+                            <li>Schedule first dental visit by age 1</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="milestone-card">
+                    <span class="milestone-age">1-3 Years</span>
+                    <h3>Baby Teeth Fill In</h3>
+                    <p>By age 3, most children have all 20 baby teeth. This is when dental habits really start to matter.</p>
+                    <div class="milestone-tips">
+                        <strong>Care Tips:</strong>
+                        <ul>
+                            <li>Brush twice daily with a rice-grain size of fluoride toothpaste</li>
+                            <li>Begin weaning from bottles (especially at bedtime)</li>
+                            <li>Limit sugary snacks and juice</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="milestone-card">
+                    <span class="milestone-age">3-6 Years</span>
+                    <h3>Preparing for Permanent Teeth</h3>
+                    <p>Baby teeth are placeholders for permanent teeth. Cavities in baby teeth can affect the health of adult teeth developing beneath.</p>
+                    <div class="milestone-tips">
+                        <strong>Care Tips:</strong>
+                        <ul>
+                            <li>Increase to pea-sized amount of fluoride toothpaste</li>
+                            <li>Start teaching proper brushing technique</li>
+                            <li>Consider dental sealants when molars appear</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="milestone-card">
+                    <span class="milestone-age">6-12 Years</span>
+                    <h3>Mixed Dentition Period</h3>
+                    <p>Children lose baby teeth and gain permanent ones. First molars arrive around age 6, and most permanent teeth are in by age 12-13.</p>
+                    <div class="milestone-tips">
+                        <strong>Care Tips:</strong>
+                        <ul>
+                            <li>Monitor brushing—kids need supervision until age 7-8</li>
+                            <li>Introduce flossing when teeth touch</li>
+                            <li>Get orthodontic evaluation around age 7</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="milestone-card">
+                    <span class="milestone-age">12+ Years</span>
+                    <h3>Teen Dental Care</h3>
+                    <p>Most permanent teeth are in place. Wisdom teeth may start to develop in later teen years.</p>
+                    <div class="milestone-tips">
+                        <strong>Care Tips:</strong>
+                        <ul>
+                            <li>Continue twice-daily brushing and daily flossing</li>
+                            <li>Use mouthguards for sports</li>
+                            <li>Avoid sugary drinks and energy drinks</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="milestone-card">
+                    <span class="milestone-age">All Ages</span>
+                    <h3>Regular Checkups Matter</h3>
+                    <p>Regardless of age, regular dental visits every 6 months are essential for maintaining healthy teeth and catching problems early.</p>
+                    <div class="milestone-tips">
+                        <strong>What We Check:</strong>
+                        <ul>
+                            <li>Cavities and tooth decay</li>
+                            <li>Gum health and bite alignment</li>
+                            <li>Overall oral development</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Brushing Guide -->
+    <section class="section" id="brushing">
+        <div class="container brushing-container">
+            <div class="brushing-image">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                    <rect x="3" y="3" width="18" height="18" rx="2" ry="2"/>
+                    <circle cx="8.5" cy="8.5" r="1.5"/>
+                    <polyline points="21 15 16 10 5 21"/>
+                </svg>
+                <span>Child Brushing Teeth Photo</span>
+            </div>
+            <div class="brushing-content">
+                <div class="section-label">Home Care</div>
+                <h2>How to Brush Like a Pro</h2>
+                <p>Proper brushing technique is the foundation of good oral health. Here's how to help your child brush effectively:</p>
+                <ol class="brushing-steps">
+                    <li>
+                        <div class="step-number">1</div>
+                        <div class="step-content">
+                            <strong>Use the Right Amount</strong>
+                            <span>Rice-grain size for under 3, pea-size for ages 3+</span>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="step-number">2</div>
+                        <div class="step-content">
+                            <strong>Angle the Brush</strong>
+                            <span>45 degrees toward the gum line</span>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="step-number">3</div>
+                        <div class="step-content">
+                            <strong>Use Gentle Circles</strong>
+                            <span>Small, circular motions—not back and forth scrubbing</span>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="step-number">4</div>
+                        <div class="step-content">
+                            <strong>Cover All Surfaces</strong>
+                            <span>Front, back, and chewing surfaces of every tooth</span>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="step-number">5</div>
+                        <div class="step-content">
+                            <strong>Don't Forget the Tongue</strong>
+                            <span>Gently brush to remove bacteria</span>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="step-number">6</div>
+                        <div class="step-content">
+                            <strong>Time It Right</strong>
+                            <span>Brush for 2 minutes, twice a day</span>
+                        </div>
+                    </li>
+                </ol>
+            </div>
+        </div>
+    </section>
+
+    <!-- Diet & Nutrition -->
+    <section class="section" id="diet">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-label">Nutrition</div>
+                <h2>Diet & Dental Health</h2>
+                <p>What your child eats and drinks has a direct impact on their dental health.</p>
+            </div>
+            <div class="diet-grid">
+                <div class="diet-card good">
+                    <h3>
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polyline points="20 6 9 17 4 12"/>
+                        </svg>
+                        Tooth-Friendly Foods
+                    </h3>
+                    <ul class="diet-list">
+                        <li>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+                            <div><strong>Water</strong> — The best drink for teeth! Rinses away food particles and keeps mouths hydrated.</div>
+                        </li>
+                        <li>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+                            <div><strong>Dairy Products</strong> — Cheese, milk, and yogurt are rich in calcium and help neutralize acids.</div>
+                        </li>
+                        <li>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+                            <div><strong>Crunchy Vegetables</strong> — Carrots, celery, and cucumbers help clean teeth naturally.</div>
+                        </li>
+                        <li>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+                            <div><strong>Lean Proteins</strong> — Eggs, fish, and chicken provide phosphorus for strong teeth.</div>
+                        </li>
+                        <li>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+                            <div><strong>Fresh Fruits</strong> — Apples and pears increase saliva production and are lower in acid than citrus.</div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="diet-card bad">
+                    <h3>
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <line x1="18" y1="6" x2="6" y2="18"/>
+                            <line x1="6" y1="6" x2="18" y2="18"/>
+                        </svg>
+                        Foods to Limit
+                    </h3>
+                    <ul class="diet-list">
+                        <li>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+                            <div><strong>Sugary Drinks</strong> — Soda, juice, sports drinks, and sweet tea bathe teeth in sugar and acid.</div>
+                        </li>
+                        <li>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+                            <div><strong>Sticky Candy</strong> — Gummies, caramels, and taffy cling to teeth and are hard to brush away.</div>
+                        </li>
+                        <li>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+                            <div><strong>Starchy Snacks</strong> — Chips, crackers, and white bread break down into sugars.</div>
+                        </li>
+                        <li>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+                            <div><strong>Citrus & Acidic Foods</strong> — Oranges, lemons, and tomatoes can erode enamel over time.</div>
+                        </li>
+                        <li>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+                            <div><strong>Dried Fruit</strong> — Raisins and fruit snacks are concentrated sugar that sticks to teeth.</div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQs -->
+    <section class="section" id="faqs">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-label">Common Questions</div>
+                <h2>Parent FAQs</h2>
+                <p>Answers to the questions we hear most often from parents.</p>
+            </div>
+            <div class="faq-container">
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>When should my child start using fluoride toothpaste?</h3>
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polyline points="6 9 12 15 18 9"/>
+                        </svg>
+                    </div>
+                    <div class="faq-answer">
+                        The American Academy of Pediatric Dentistry recommends using fluoride toothpaste as soon as teeth appear. For children under 3, use a rice-grain sized smear. For ages 3-6, use a pea-sized amount. Teach them to spit, not swallow.
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>My child sucks their thumb. Will it damage their teeth?</h3>
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polyline points="6 9 12 15 18 9"/>
+                        </svg>
+                    </div>
+                    <div class="faq-answer">
+                        Thumb sucking is normal for infants and toddlers. However, if it continues past age 4-5, it can affect tooth alignment and jaw development. We can provide guidance and, if needed, recommend techniques to help break the habit.
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>Are dental X-rays safe for children?</h3>
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polyline points="6 9 12 15 18 9"/>
+                        </svg>
+                    </div>
+                    <div class="faq-answer">
+                        Yes, dental X-rays are very safe. We use digital X-rays that emit up to 90% less radiation than traditional film X-rays. We also use lead aprons and only take X-rays when clinically necessary. The radiation from a dental X-ray is less than what you're exposed to during a day of normal activities.
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>What should I do if my child knocks out a tooth?</h3>
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polyline points="6 9 12 15 18 9"/>
+                        </svg>
+                    </div>
+                    <div class="faq-answer">
+                        For a baby tooth: Don't try to put it back in. Clean the area, apply gentle pressure if bleeding, and call us. For a permanent tooth: Pick it up by the crown (not the root), rinse gently with water, and try to place it back in the socket or store it in milk. Call us immediately—time is critical!
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>How can I help my child overcome dental anxiety?</h3>
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polyline points="6 9 12 15 18 9"/>
+                        </svg>
+                    </div>
+                    <div class="faq-answer">
+                        Stay positive and avoid using scary words. Read books about dentist visits. Play "dentist" at home. Visit our office for a tour before the appointment. During visits, our team uses age-appropriate explanations and positive reinforcement. For severe anxiety, we offer sedation options.
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>Do baby teeth really matter if they're going to fall out?</h3>
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polyline points="6 9 12 15 18 9"/>
+                        </svg>
+                    </div>
+                    <div class="faq-answer">
+                        Absolutely! Baby teeth hold space for permanent teeth—losing them early can cause crowding. They're also essential for eating, speaking, and self-esteem. Infections in baby teeth can damage the developing permanent teeth underneath. Good care now sets the stage for lifelong dental health.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Emergency Info -->
+    <section class="emergency-section">
+        <div class="container emergency-container">
+            <div class="emergency-content">
+                <h2>Dental Emergencies</h2>
+                <p>Know what to do if your child has a dental emergency. Quick action can save a tooth!</p>
+                <ul class="emergency-list">
+                    <li>
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polyline points="20 6 9 17 4 12"/>
+                        </svg>
+                        <strong>Knocked-out tooth:</strong> Keep moist, call immediately
+                    </li>
+                    <li>
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polyline points="20 6 9 17 4 12"/>
+                        </svg>
+                        <strong>Severe toothache:</strong> Rinse with warm water, call us
+                    </li>
+                    <li>
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polyline points="20 6 9 17 4 12"/>
+                        </svg>
+                        <strong>Broken tooth:</strong> Save any pieces, apply cold compress
+                    </li>
+                    <li>
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polyline points="20 6 9 17 4 12"/>
+                        </svg>
+                        <strong>Bitten tongue/lip:</strong> Clean gently, apply pressure
+                    </li>
+                </ul>
+            </div>
+            <a href="tel:856-555-0123" class="emergency-phone">
+                <div class="emergency-phone-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+                    </svg>
+                </div>
+                <div>
+                    <div class="emergency-phone-text">24/7 Emergency Line</div>
+                    <div class="emergency-phone-number">(856) 555-0123</div>
+                </div>
+            </a>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta">
+        <div class="container cta-container">
+            <h2>Have More Questions?</h2>
+            <p>Our team is always happy to help. Schedule an appointment or give us a call—we're here for you and your family.</p>
+            <a href="contact.html" class="btn-primary">
+                Contact Us
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M5 12h14M12 5l7 7-7 7"/>
+                </svg>
+            </a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a href="index.html" class="logo">
+                        <div class="logo-icon">😊</div>
+                        <span class="logo-text">Happy <span>Smiles</span></span>
+                    </a>
+                    <p>Happy Smiles Pediatric Dentistry provides gentle, compassionate dental care for infants, children, and teens in Cherry Hill, NJ and the surrounding communities.</p>
+                    <div class="footer-social">
+                        <a href="#" aria-label="Facebook">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/>
+                            </svg>
+                        </a>
+                        <a href="#" aria-label="Instagram">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+                                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/>
+                                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+                <div class="footer-column">
+                    <h4>Quick Links</h4>
+                    <a href="about.html">About Us</a>
+                    <a href="services.html">Services</a>
+                    <a href="first-visit.html">First Visit</a>
+                    <a href="parents.html">For Parents</a>
+                    <a href="contact.html">Contact</a>
+                </div>
+                <div class="footer-column">
+                    <h4>Services</h4>
+                    <a href="services.html">Preventive Care</a>
+                    <a href="services.html">Restorative Dentistry</a>
+                    <a href="services.html">Emergency Care</a>
+                    <a href="services.html">Sedation Dentistry</a>
+                    <a href="services.html">Special Needs</a>
+                </div>
+                <div class="footer-column">
+                    <h4>Contact Us</h4>
+                    <div class="footer-contact-item">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+                            <circle cx="12" cy="10" r="3"/>
+                        </svg>
+                        <span>123 Main Street, Suite 100<br>Cherry Hill, NJ 08002</span>
+                    </div>
+                    <div class="footer-contact-item">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+                        </svg>
+                        <span>(856) 555-0123</span>
+                    </div>
+                    <div class="footer-contact-item">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <rect x="3" y="4" width="18" height="18" rx="2" ry="2"/>
+                            <line x1="16" y1="2" x2="16" y2="6"/>
+                            <line x1="8" y1="2" x2="8" y2="6"/>
+                            <line x1="3" y1="10" x2="21" y2="10"/>
+                        </svg>
+                        <span>Mon-Thu: 8am-5pm<br>Fri: 8am-2pm<br>Sat: By Appointment</span>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Happy Smiles Pediatric Dentistry. All rights reserved.</p>
+                <div class="footer-bottom-links">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                    <a href="#">Accessibility</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
