@@ -6,9 +6,22 @@
 
 # Redirect www to non-www (canonical URL)
 [[redirects]]
-  from = "https://www.dentalgrowthdigi tal.com/*"
-  to = "https://dentalgrowthdigi tal.com/:splat"
+  from = "https://www.dentalgrowthdigital.com/*"
+  to = "https://dentalgrowthdigital.com/:splat"
   status = 301
+  force = true
+
+# Redirect pediatric subdomain to demo site
+[[redirects]]
+  from = "https://pediatric.dentalgrowthdigital.com/*"
+  to = "https://kaleidoscopic-sorbet-a20b0f.netlify.app/demos/pediatric/:splat"
+  status = 200
+  force = true
+
+[[redirects]]
+  from = "https://pediatric.dentalgrowthdigital.com"
+  to = "https://kaleidoscopic-sorbet-a20b0f.netlify.app/demos/pediatric/"
+  status = 200
   force = true
 
 # Custom headers for security and caching
