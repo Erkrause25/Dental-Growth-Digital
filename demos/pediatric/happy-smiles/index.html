@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Smiles Pediatric Dentistry | Kids Dentist Bergen County NJ</title>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root { --primary: #8B5CF6; --primary-dark: #7C3AED; --pink: #F472B6; --blue: #38BDF8; --mint: #34D399; --yellow: #FBBF24; --dark: #1E293B; --text: #475569; --text-light: #94A3B8; --bg-light: #F8FAFC; --bg-purple: #F5F3FF; --bg-pink: #FDF2F8; --white: #FFFFFF; --border: #E2E8F0; }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Nunito', sans-serif; font-size: 16px; line-height: 1.6; color: var(--text); overflow-x: hidden; }
+        img { max-width: 100%; display: block; }
+        a { text-decoration: none; color: inherit; transition: all 0.2s; }
+        ul { list-style: none; }
+        .container { max-width: 1140px; margin: 0 auto; padding: 0 24px; }
+        h1 { font-size: 48px; font-weight: 800; color: var(--dark); }
+        h2 { font-size: 32px; font-weight: 700; color: var(--dark); }
+        h3 { font-size: 20px; font-weight: 700; color: var(--dark); }
+        .btn { display: inline-flex; padding: 14px 28px; font-family: inherit; font-size: 14px; font-weight: 700; border-radius: 50px; border: none; cursor: pointer; transition: all 0.2s; }
+        .btn-primary { background: var(--primary); color: white; }
+        .btn-primary:hover { background: var(--primary-dark); transform: translateY(-2px); }
+        .btn-pink { background: var(--pink); color: white; }
+        .btn-outline { background: transparent; color: var(--primary); border: 2px solid var(--primary); }
+        .btn-outline:hover { background: var(--primary); color: white; }
+        .btn-white { background: white; color: var(--primary); }
+
+        @keyframes float { 0%, 100% { transform: translateY(0) rotate(0deg); } 50% { transform: translateY(-20px) rotate(3deg); } }
+        @keyframes floatDrift { 0%, 100% { transform: translate(0, 0); } 25% { transform: translate(10px, -15px); } 50% { transform: translate(5px, -25px); } 75% { transform: translate(-5px, -10px); } }
+        @keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
+        @keyframes pulse { 0%, 100% { transform: scale(1); opacity: 0.6; } 50% { transform: scale(1.15); opacity: 0.9; } }
+        @keyframes twinkle { 0%, 100% { opacity: 0.3; transform: scale(0.8); } 50% { opacity: 1; transform: scale(1.1); } }
+        @keyframes bounce { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-15px); } }
+        @keyframes sway { 0%, 100% { transform: translateX(0) rotate(0deg); } 50% { transform: translateX(15px) rotate(5deg); } }
+        
+        .sparkle { position: absolute; pointer-events: none; z-index: 1; }
+        .sparkle-white { position: absolute; pointer-events: none; opacity: 0.3; }
+        .anim-float { animation: float 6s ease-in-out infinite; }
+        .anim-float-slow { animation: float 8s ease-in-out infinite; }
+        .anim-drift { animation: floatDrift 10s ease-in-out infinite; }
+        .anim-spin-slow { animation: spin 30s linear infinite; }
+        .anim-pulse { animation: pulse 3s ease-in-out infinite; }
+        .anim-pulse-slow { animation: pulse 5s ease-in-out infinite; }
+        .anim-twinkle { animation: twinkle 2s ease-in-out infinite; }
+        .anim-twinkle-slow { animation: twinkle 4s ease-in-out infinite; }
+        .anim-bounce { animation: bounce 3s ease-in-out infinite; }
+        .anim-sway { animation: sway 5s ease-in-out infinite; }
+        .delay-1 { animation-delay: 0.5s; }
+        .delay-2 { animation-delay: 1s; }
+        .delay-3 { animation-delay: 1.5s; }
+        .delay-4 { animation-delay: 2s; }
+
+        .header { background: white; padding: 16px 0; position: sticky; top: 0; z-index: 100; box-shadow: 0 2px 8px rgba(0,0,0,0.06); }
+        .header .container { display: flex; align-items: center; justify-content: space-between; }
+        .logo { display: flex; align-items: center; gap: 10px; font-size: 22px; font-weight: 800; color: var(--primary); }
+        .logo span { color: var(--pink); }
+        .nav { display: flex; gap: 32px; }
+        .nav a { font-size: 14px; font-weight: 600; color: var(--text); }
+        .nav a:hover, .nav a.active { color: var(--primary); }
+        .header-cta { display: flex; align-items: center; gap: 16px; }
+        .header-phone { font-size: 14px; font-weight: 700; color: var(--primary); }
+        .menu-toggle { display: none; flex-direction: column; gap: 5px; background: none; border: none; padding: 8px; cursor: pointer; }
+        .menu-toggle span { width: 24px; height: 2px; background: var(--dark); }
+        .mobile-nav { display: none; position: fixed; top: 70px; left: 0; right: 0; background: white; padding: 24px; box-shadow: 0 4px 12px rgba(0,0,0,0.1); z-index: 99; }
+        .mobile-nav.active { display: block; }
+        .mobile-nav a { display: block; padding: 12px 0; font-weight: 600; border-bottom: 1px solid var(--border); }
+
+        .hero { background: linear-gradient(135deg, var(--bg-purple), var(--bg-pink)); padding: 80px 0; position: relative; overflow: hidden; }
+        .hero .container { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: center; position: relative; z-index: 2; }
+        .hero-badge { display: inline-flex; align-items: center; gap: 8px; padding: 8px 16px; background: white; color: var(--primary); font-size: 14px; font-weight: 700; border-radius: 50px; margin-bottom: 16px; box-shadow: 0 4px 12px rgba(139,92,246,0.15); }
+        .hero h1 { margin-bottom: 16px; background: linear-gradient(135deg, var(--primary), var(--pink)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+        .hero p { font-size: 18px; margin-bottom: 32px; }
+        .hero-btns { display: flex; gap: 16px; margin-bottom: 32px; }
+        .hero-stats { display: flex; gap: 48px; }
+        .stat-num { font-size: 36px; font-weight: 800; color: var(--primary); }
+        .stat-label { font-size: 14px; color: var(--text-light); }
+        .hero-image img { border-radius: 20px; box-shadow: 0 20px 40px rgba(139,92,246,0.2); }
+
+        section { padding: 80px 0; position: relative; overflow: hidden; }
+        .section-header { text-align: center; margin-bottom: 48px; position: relative; z-index: 2; }
+        .section-badge { display: inline-block; padding: 8px 16px; background: linear-gradient(135deg, var(--primary), var(--pink)); color: white; font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; border-radius: 50px; margin-bottom: 12px; }
+        .section-header p { color: var(--text-light); max-width: 500px; margin: 12px auto 0; }
+
+        .services-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; position: relative; z-index: 2; }
+        .service-card { background: white; border: 2px solid var(--border); border-radius: 16px; overflow: hidden; transition: all 0.3s; }
+        .service-card:hover { border-color: var(--primary); transform: translateY(-4px); box-shadow: 0 12px 24px rgba(139,92,246,0.15); }
+        .service-card img { width: 100%; height: 180px; object-fit: cover; object-position: center; }
+        .service-card-body { padding: 20px; }
+        .service-card h3 { font-size: 17px; margin-bottom: 8px; }
+        .service-card p { font-size: 14px; color: var(--text-light); margin-bottom: 12px; }
+        .service-link { font-size: 14px; font-weight: 700; color: var(--primary); }
+        .section-cta { text-align: center; margin-top: 32px; position: relative; z-index: 2; }
+
+        .about { background: var(--bg-light); }
+        .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: center; position: relative; z-index: 2; }
+        .about-image img { border-radius: 20px; }
+        .about-content h2 { margin-bottom: 24px; }
+        .about-content p { color: var(--text-light); margin-bottom: 16px; }
+        .feature-list { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin: 24px 0; }
+        .feature-item { display: flex; align-items: center; gap: 8px; font-size: 14px; font-weight: 600; }
+        .feature-check { width: 22px; height: 22px; background: var(--mint); color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 12px; }
+
+        /* TEAM SECTION - CARD STYLE LIKE ABOUT PAGE */
+        .team { background: var(--bg-light); }
+        .team-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; max-width: 900px; margin: 0 auto; position: relative; z-index: 2; }
+        .team-card { background: white; border-radius: 16px; overflow: hidden; box-shadow: 0 2px 8px rgba(0,0,0,0.06); }
+        .team-card img { width: 100%; height: 300px; object-fit: cover; object-position: top; }
+        .team-body { padding: 24px; }
+        .team-body h3 { font-size: 20px; margin-bottom: 4px; }
+        .team-role { font-size: 14px; color: var(--pink); font-weight: 700; margin-bottom: 12px; }
+        .team-body p { font-size: 14px; color: var(--text-light); }
+
+        .testimonials { background: linear-gradient(135deg, var(--primary), var(--pink)); }
+        .testimonials .section-badge { background: rgba(255,255,255,0.2); }
+        .testimonials h2 { color: white; }
+        .testimonials .section-header p { color: rgba(255,255,255,0.8); }
+        .testimonial-slider { position: relative; max-width: 700px; margin: 0 auto; z-index: 2; }
+        .testimonial-slide { display: none; background: white; padding: 32px; border-radius: 16px; text-align: center; animation: fadeIn 0.5s ease; }
+        .testimonial-slide.active { display: block; }
+        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+        .stars { color: var(--yellow); font-size: 20px; margin-bottom: 16px; letter-spacing: 4px; }
+        .testimonial-slide > p { font-size: 18px; font-style: italic; color: var(--text); margin-bottom: 20px; }
+        .testimonial-author strong { display: block; color: var(--dark); }
+        .testimonial-author span { font-size: 14px; color: var(--text-light); }
+        .slider-dots { display: flex; justify-content: center; gap: 8px; margin-top: 24px; z-index: 2; position: relative; }
+        .slider-dot { width: 10px; height: 10px; border-radius: 50%; background: rgba(255,255,255,0.4); border: none; cursor: pointer; }
+        .slider-dot.active { background: white; transform: scale(1.2); }
+
+        .cta { background: var(--dark); text-align: center; }
+        .cta::before { content: ""; position: absolute; top: 0; left: 0; right: 0; height: 4px; background: linear-gradient(90deg, var(--pink), var(--primary), var(--blue), var(--mint), var(--yellow)); }
+        .cta .container { position: relative; z-index: 2; }
+        .cta h2 { color: white; margin-bottom: 12px; }
+        .cta p { color: rgba(255,255,255,0.7); margin-bottom: 24px; }
+        .cta-btns { display: flex; justify-content: center; gap: 16px; }
+
+        .footer { padding: 48px 0 24px; background: var(--bg-light); }
+        .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1.5fr; gap: 32px; margin-bottom: 32px; }
+        .footer .logo { margin-bottom: 16px; }
+        .footer h4 { font-size: 14px; font-weight: 700; margin-bottom: 16px; color: var(--dark); }
+        .footer ul { display: flex; flex-direction: column; gap: 8px; }
+        .footer a, .footer p { font-size: 14px; color: var(--text-light); }
+        .footer a:hover { color: var(--primary); }
+        .footer-bottom { padding-top: 24px; border-top: 1px solid var(--border); display: flex; justify-content: space-between; font-size: 13px; color: var(--text-light); }
+
+        @media (max-width: 992px) { .services-grid { grid-template-columns: repeat(2, 1fr); } .footer-grid { grid-template-columns: repeat(2, 1fr); } }
+        @media (max-width: 768px) { 
+            h1 { font-size: 32px; } h2 { font-size: 24px; } 
+            .nav, .header-phone, .header .btn { display: none; } .menu-toggle { display: flex; } 
+            .hero .container, .about-grid { grid-template-columns: 1fr; text-align: center; } 
+            .hero-image { order: -1; } .hero-btns, .hero-stats { justify-content: center; } 
+            .feature-list, .team-grid { grid-template-columns: 1fr; } 
+            .cta-btns { flex-direction: column; align-items: center; } 
+            .footer-grid { grid-template-columns: 1fr; text-align: center; } .footer ul { align-items: center; } 
+            .footer-bottom { flex-direction: column; text-align: center; gap: 8px; } .sparkle { transform: scale(0.6); }
+        }
+        @media (max-width: 480px) { .services-grid { grid-template-columns: 1fr; } .hero-stats { flex-direction: column; gap: 16px; } .hero-btns { flex-direction: column; } }
+    </style>
+</head>
+<body>
+    <header class="header"><div class="container">
+        <a href="index.html" class="logo"><svg width="36" height="44" viewBox="0 0 50 60"><path d="M25 5 C12 5 5 15 5 28 C5 38 8 50 14 52 C18 53 20 45 22 38 C23 35 27 35 28 38 C30 45 32 53 36 52 C42 50 45 38 45 28 C45 15 38 5 25 5 Z" fill="#FFF" stroke="#8B5CF6" stroke-width="3"/><circle cx="14" cy="28" r="3" fill="#FECDD3"/><circle cx="36" cy="28" r="3" fill="#FECDD3"/><ellipse cx="17" cy="22" rx="2.5" ry="3" fill="#1E293B"/><ellipse cx="33" cy="22" rx="2.5" ry="3" fill="#1E293B"/><path d="M17 32 Q25 40 33 32" stroke="#F472B6" stroke-width="2.5" fill="none" stroke-linecap="round"/></svg>Happy<span>Smiles</span></a>
+        <nav class="nav"><a href="index.html" class="active">Home</a><a href="about.html">About</a><a href="services.html">Services</a><a href="first-visit.html">First Visit</a><a href="parents.html">Parents</a><a href="contact.html">Contact</a></nav>
+        <div class="header-cta"><a href="tel:201-555-0123" class="header-phone">(201) 555-0123</a><a href="contact.html" class="btn btn-primary">Book Now</a></div>
+        <button class="menu-toggle" onclick="document.getElementById('mobileNav').classList.toggle('active')"><span></span><span></span><span></span></button>
+    </div></header>
+    <div class="mobile-nav" id="mobileNav"><a href="index.html">Home</a><a href="about.html">About</a><a href="services.html">Services</a><a href="first-visit.html">First Visit</a><a href="parents.html">Parents</a><a href="contact.html">Contact</a></div>
+
+    <section class="hero">
+        <svg class="sparkle anim-float" style="top:8%;left:4%;" width="55" height="55" viewBox="0 0 80 80"><path d="M40 5 L45 30 L70 20 L50 40 L75 50 L50 55 L60 80 L40 60 L20 80 L30 55 L5 50 L30 40 L10 20 L35 30 Z" fill="#FBBF24" opacity="0.7"/></svg>
+        <svg class="sparkle anim-pulse delay-2" style="top:15%;right:6%;" width="45" height="45" viewBox="0 0 80 80"><circle cx="40" cy="40" r="10" fill="#F472B6" opacity="0.5"/><circle cx="18" cy="22" r="6" fill="#8B5CF6" opacity="0.5"/><circle cx="62" cy="58" r="7" fill="#38BDF8" opacity="0.5"/></svg>
+        <svg class="sparkle anim-spin-slow" style="bottom:20%;left:8%;" width="40" height="40" viewBox="0 0 80 80"><path d="M40 5 L45 35 L75 40 L45 45 L40 75 L35 45 L5 40 L35 35 Z" fill="#8B5CF6" opacity="0.5"/></svg>
+        <svg class="sparkle anim-twinkle" style="top:55%;left:2%;" width="35" height="35" viewBox="0 0 80 80"><path d="M20 20 L22 15 L24 20 L29 18 L24 20 L22 25 L20 20 L15 22 Z" fill="#FBBF24" opacity="0.9"/><path d="M55 50 L57 45 L59 50 L64 48 L59 50 L57 55 L55 50 L50 52 Z" fill="#F472B6" opacity="0.9"/></svg>
+        <svg class="sparkle anim-drift delay-1" style="bottom:30%;right:4%;" width="50" height="50" viewBox="0 0 80 80"><path d="M40 10 L44 32 L65 25 L48 40 L68 48 L46 52 L55 72 L40 56 L25 72 L34 52 L12 48 L32 40 L15 25 L36 32 Z" fill="#34D399" opacity="0.5"/></svg>
+        <svg class="sparkle anim-bounce delay-3" style="top:5%;left:40%;" width="30" height="30" viewBox="0 0 80 80"><circle cx="25" cy="25" r="8" fill="#F472B6" opacity="0.4"/><circle cx="55" cy="55" r="6" fill="#FBBF24" opacity="0.4"/></svg>
+        <svg class="sparkle anim-twinkle-slow delay-4" style="top:35%;right:12%;" width="25" height="25" viewBox="0 0 80 80"><path d="M40 5 L45 35 L75 40 L45 45 L40 75 L35 45 L5 40 L35 35 Z" fill="#FBBF24" opacity="0.6"/></svg>
+        <svg class="sparkle anim-sway delay-2" style="bottom:10%;left:25%;" width="35" height="35" viewBox="0 0 80 80"><circle cx="20" cy="30" r="5" fill="#38BDF8" opacity="0.5"/><circle cx="50" cy="20" r="7" fill="#F472B6" opacity="0.5"/></svg>
+
+        <div class="container">
+            <div class="hero-content">
+                <span class="hero-badge">⭐ Bergen County's Favorite Kids Dentist</span>
+                <h1>Where Little Smiles Shine Bright!</h1>
+                <p>We make dental visits fun and fear-free! Our friendly team creates magical experiences that help your child build healthy habits for life.</p>
+                <div class="hero-btns"><a href="contact.html" class="btn btn-primary">Book a Visit</a><a href="tel:201-555-0123" class="btn btn-outline">Call Us</a></div>
+                <div class="hero-stats"><div><span class="stat-num">15+</span><span class="stat-label">Years</span></div><div><span class="stat-num">5,000+</span><span class="stat-label">Happy Kids</span></div><div><span class="stat-num">4.9★</span><span class="stat-label">Rating</span></div></div>
+            </div>
+            <div class="hero-image"><img src="images/hero-boy-dentist.png" alt="Happy boy at the dentist"></div>
+        </div>
+    </section>
+
+    <section class="services">
+        <svg class="sparkle anim-spin-slow" style="top:8%;right:5%;" width="45" height="45" viewBox="0 0 80 80"><path d="M40 5 L45 35 L75 40 L45 45 L40 75 L35 45 L5 40 L35 35 Z" fill="#FBBF24" opacity="0.25"/></svg>
+        <svg class="sparkle anim-pulse-slow delay-1" style="bottom:12%;left:3%;" width="55" height="55" viewBox="0 0 80 80"><circle cx="20" cy="20" r="6" fill="#F472B6" opacity="0.2"/><circle cx="55" cy="35" r="8" fill="#8B5CF6" opacity="0.2"/></svg>
+        <svg class="sparkle anim-twinkle delay-3" style="top:50%;right:2%;" width="30" height="30" viewBox="0 0 80 80"><path d="M40 10 L43 35 L68 40 L43 45 L40 70 L37 45 L12 40 L37 35 Z" fill="#8B5CF6" opacity="0.3"/></svg>
+        <div class="container">
+            <div class="section-header"><span class="section-badge">Our Services</span><h2>Adventures in Dental Care</h2><p>From first tooth to big kid smiles, we're here for every step!</p></div>
+            <div class="services-grid">
+                <a href="first-visit.html" class="service-card"><img src="images/mom-daughter-waiting.png" alt="First Visit"><div class="service-card-body"><h3>First Visit</h3><p>A gentle, fun introduction for little ones.</p><span class="service-link">Learn More →</span></div></a>
+                <a href="services.html" class="service-card"><img src="images/girl-thumbsup.png" alt="Cleanings"><div class="service-card-body"><h3>Happy Checkups</h3><p>Keep those smiles sparkling!</p><span class="service-link">Learn More →</span></div></a>
+                <a href="services.html" class="service-card"><img src="images/boy-toothbrush.png" alt="Sealants"><div class="service-card-body"><h3>Tooth Protection</h3><p>Sealants and fluoride to prevent cavities.</p><span class="service-link">Learn More →</span></div></a>
+                <a href="services.html" class="service-card"><img src="images/staff-boy-teddy.png" alt="Emergency"><div class="service-card-body"><h3>Urgent Care</h3><p>We're here when you need us most.</p><span class="service-link">Learn More →</span></div></a>
+            </div>
+            <div class="section-cta"><a href="services.html" class="btn btn-outline">See All Services</a></div>
+        </div>
+    </section>
+
+    <section class="about">
+        <svg class="sparkle anim-float-slow" style="top:15%;left:4%;" width="50" height="50" viewBox="0 0 80 80"><path d="M40 5 L45 30 L70 20 L50 40 L75 50 L50 55 L60 80 L40 60 L20 80 L30 55 L5 50 L30 40 L10 20 L35 30 Z" fill="#8B5CF6" opacity="0.2"/></svg>
+        <svg class="sparkle anim-twinkle delay-2" style="bottom:20%;right:6%;" width="40" height="40" viewBox="0 0 80 80"><path d="M20 20 L22 15 L24 20 L29 18 L24 20 L22 25 L20 20 L15 22 Z" fill="#F472B6" opacity="0.5"/><path d="M55 50 L57 45 L59 50 L64 48 L59 50 L57 55 L55 50 L50 52 Z" fill="#FBBF24" opacity="0.5"/></svg>
+        <div class="container"><div class="about-grid">
+            <div class="about-image"><img src="images/colorful-office.png" alt="Our colorful office"></div>
+            <div class="about-content">
+                <span class="section-badge">About Us</span>
+                <h2>A Place Kids Actually Want to Visit!</h2>
+                <p>Welcome to Happy Smiles, where every child is a VIP! Our colorful, kid-designed office makes dental visits feel like an adventure.</p>
+                <p>With gentle care, fun prizes, and a team that truly loves working with children, we turn nervous first-timers into brave dental superstars.</p>
+                <div class="feature-list"><div class="feature-item"><span class="feature-check">✓</span> Kid-Friendly Office</div><div class="feature-item"><span class="feature-check">✓</span> Gentle & Patient</div><div class="feature-item"><span class="feature-check">✓</span> Prize Wall Rewards</div><div class="feature-item"><span class="feature-check">✓</span> Same-Day Emergencies</div></div>
+                <a href="about.html" class="btn btn-outline">Meet Our Team</a>
+            </div>
+        </div></div>
+    </section>
+
+    <section class="team">
+        <svg class="sparkle anim-sway" style="top:10%;left:5%;" width="35" height="35" viewBox="0 0 80 80"><circle cx="25" cy="30" r="6" fill="#FBBF24" opacity="0.3"/><circle cx="55" cy="50" r="5" fill="#F472B6" opacity="0.3"/></svg>
+        <svg class="sparkle anim-twinkle-slow delay-2" style="bottom:15%;right:8%;" width="40" height="40" viewBox="0 0 80 80"><path d="M40 5 L45 35 L75 40 L45 45 L40 75 L35 45 L5 40 L35 35 Z" fill="#8B5CF6" opacity="0.25"/></svg>
+        <div class="container">
+            <div class="section-header"><span class="section-badge">Our Team</span><h2>Your Smile Superheroes</h2></div>
+            <div class="team-grid">
+                <div class="team-card">
+                    <img src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?w=400&h=350&fit=crop&crop=face" alt="Dr. Sarah">
+                    <div class="team-body">
+                        <h3>Dr. Sarah Johnson</h3>
+                        <div class="team-role">Pediatric Dentist, DMD</div>
+                        <p>Kids call her "Dr. Sparkle"! 12+ years making dental visits magical for nervous kids.</p>
+                    </div>
+                </div>
+                <div class="team-card">
+                    <img src="https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?w=400&h=350&fit=crop&crop=face" alt="Dr. Mike">
+                    <div class="team-body">
+                        <h3>Dr. Michael Chen</h3>
+                        <div class="team-role">Pediatric Dentist, DDS</div>
+                        <p>Dad of three who knows the best jokes! His patience makes every child feel safe.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="testimonials">
+        <svg class="sparkle-white anim-float" style="top:10%;left:6%;" width="55" height="55" viewBox="0 0 80 80"><path d="M40 5 L45 30 L70 20 L50 40 L75 50 L50 55 L60 80 L40 60 L20 80 L30 55 L5 50 L30 40 L10 20 L35 30 Z" fill="white"/></svg>
+        <svg class="sparkle-white anim-spin-slow delay-1" style="top:20%;right:8%;" width="40" height="40" viewBox="0 0 80 80"><path d="M40 5 L45 35 L75 40 L45 45 L40 75 L35 45 L5 40 L35 35 Z" fill="white"/></svg>
+        <svg class="sparkle-white anim-pulse delay-3" style="bottom:25%;left:10%;" width="45" height="45" viewBox="0 0 80 80"><circle cx="20" cy="25" r="6" fill="white"/><circle cx="55" cy="50" r="8" fill="white"/></svg>
+        <svg class="sparkle-white anim-twinkle delay-2" style="bottom:15%;right:5%;" width="35" height="35" viewBox="0 0 80 80"><path d="M20 20 L22 15 L24 20 L29 18 L24 20 L22 25 L20 20 L15 22 Z" fill="white"/><path d="M55 50 L57 45 L59 50 L64 48 L59 50 L57 55 L55 50 L50 52 Z" fill="white"/></svg>
+        <svg class="sparkle-white anim-bounce delay-4" style="top:50%;left:3%;" width="30" height="30" viewBox="0 0 80 80"><circle cx="40" cy="40" r="12" fill="white" opacity="0.4"/></svg>
+        <div class="container">
+            <div class="section-header"><span class="section-badge">Reviews</span><h2>Happy Parents, Happier Kids!</h2></div>
+            <div class="testimonial-slider">
+                <div class="testimonial-slide active"><div class="stars">★★★★★</div><p>"My daughter was terrified of the dentist. After her first visit at Happy Smiles, she asked when she could come back!"</p><div class="testimonial-author"><strong>Jennifer M.</strong><span>Ridgewood</span></div></div>
+                <div class="testimonial-slide"><div class="stars">★★★★★</div><p>"Finally found a dentist my son actually likes! The colorful office and friendly staff make all the difference."</p><div class="testimonial-author"><strong>Michael T.</strong><span>Paramus</span></div></div>
+                <div class="testimonial-slide"><div class="stars">★★★★★</div><p>"Dr. Sarah is amazing with kids. She explained everything in a fun way and my 4-year-old left with a huge smile."</p><div class="testimonial-author"><strong>Sarah K.</strong><span>Teaneck</span></div></div>
+                <div class="testimonial-slide"><div class="stars">★★★★★</div><p>"The entire staff is wonderful. My three kids actually look forward to their checkups now!"</p><div class="testimonial-author"><strong>David L.</strong><span>Hackensack</span></div></div>
+                <div class="testimonial-slide"><div class="stars">★★★★★</div><p>"We switched dentists and the difference is night and day. Happy Smiles truly understands anxious children."</p><div class="testimonial-author"><strong>Amanda R.</strong><span>Glen Rock</span></div></div>
+                <div class="testimonial-slide"><div class="stars">★★★★★</div><p>"My son has sensory issues and they were so patient. Best dental experience we've ever had!"</p><div class="testimonial-author"><strong>Christine P.</strong><span>Fair Lawn</span></div></div>
+                <div class="testimonial-slide"><div class="stars">★★★★★</div><p>"Dr. Chen made my nervous 6-year-old laugh through the whole appointment. 10/10!"</p><div class="testimonial-author"><strong>Robert J.</strong><span>Wyckoff</span></div></div>
+                <div class="testimonial-slide"><div class="stars">★★★★★</div><p>"From the moment we walked in, my kids were at ease. Everything is designed with children in mind."</p><div class="testimonial-author"><strong>Lisa H.</strong><span>Ridgewood</span></div></div>
+                <div class="testimonial-slide"><div class="stars">★★★★★</div><p>"They got us in same-day when my daughter chipped her tooth. So grateful!"</p><div class="testimonial-author"><strong>Kevin W.</strong><span>Mahwah</span></div></div>
+                <div class="testimonial-slide"><div class="stars">★★★★★</div><p>"I'm a pediatric nurse and I'm impressed by how well this team communicates with children."</p><div class="testimonial-author"><strong>Maria S.</strong><span>Oradell</span></div></div>
+            </div>
+            <div class="slider-dots"><button class="slider-dot active" onclick="showSlide(0)"></button><button class="slider-dot" onclick="showSlide(1)"></button><button class="slider-dot" onclick="showSlide(2)"></button><button class="slider-dot" onclick="showSlide(3)"></button><button class="slider-dot" onclick="showSlide(4)"></button><button class="slider-dot" onclick="showSlide(5)"></button><button class="slider-dot" onclick="showSlide(6)"></button><button class="slider-dot" onclick="showSlide(7)"></button><button class="slider-dot" onclick="showSlide(8)"></button><button class="slider-dot" onclick="showSlide(9)"></button></div>
+        </div>
+    </section>
+
+    <section class="cta">
+        <svg class="sparkle-white anim-twinkle" style="top:20%;left:10%;opacity:0.15;" width="50" height="50" viewBox="0 0 80 80"><path d="M40 5 L45 30 L70 20 L50 40 L75 50 L50 55 L60 80 L40 60 L20 80 L30 55 L5 50 L30 40 L10 20 L35 30 Z" fill="white"/></svg>
+        <svg class="sparkle-white anim-pulse-slow delay-2" style="bottom:25%;right:12%;opacity:0.15;" width="40" height="40" viewBox="0 0 80 80"><path d="M40 5 L45 35 L75 40 L45 45 L40 75 L35 45 L5 40 L35 35 Z" fill="white"/></svg>
+        <div class="container"><h2>Ready for Your Child's Smile Adventure?</h2><p>Book a visit today and see why kids love Happy Smiles!</p><div class="cta-btns"><a href="contact.html" class="btn btn-white">Book Appointment</a><a href="tel:201-555-0123" class="btn btn-pink">Call (201) 555-0123</a></div></div>
+    </section>
+
+    <footer class="footer"><div class="container">
+        <div class="footer-grid">
+            <div><a href="index.html" class="logo"><svg width="30" height="36" viewBox="0 0 50 60"><path d="M25 5 C12 5 5 15 5 28 C5 38 8 50 14 52 C18 53 20 45 22 38 C23 35 27 35 28 38 C30 45 32 53 36 52 C42 50 45 38 45 28 C45 15 38 5 25 5 Z" fill="#FFF" stroke="#8B5CF6" stroke-width="3"/><ellipse cx="17" cy="22" rx="2" ry="2.5" fill="#1E293B"/><ellipse cx="33" cy="22" rx="2" ry="2.5" fill="#1E293B"/><path d="M17 30 Q25 37 33 30" stroke="#F472B6" stroke-width="2" fill="none"/></svg>Happy<span>Smiles</span></a><p>Where little smiles shine bright! Serving Bergen County, NJ.</p></div>
+            <div><h4>Quick Links</h4><ul><li><a href="index.html">Home</a></li><li><a href="about.html">About</a></li><li><a href="services.html">Services</a></li><li><a href="contact.html">Contact</a></li></ul></div>
+            <div><h4>Services</h4><ul><li><a href="first-visit.html">First Visits</a></li><li><a href="services.html">Cleanings</a></li><li><a href="services.html">Sealants</a></li><li><a href="services.html">Emergency</a></li></ul></div>
+            <div><h4>Contact</h4><p>123 Smile Street<br>Ridgewood, NJ 07450</p><p><a href="tel:201-555-0123">(201) 555-0123</a></p></div>
+        </div>
+        <div class="footer-bottom"><p>© 2025 Happy Smiles Pediatric Dentistry</p><p>Demo by <a href="https://dentalgrowthdigital.com">DentalGrowth Digital</a></p></div>
+    </div></footer>
+
+    <script>
+        let currentSlide = 0;
+        const slides = document.querySelectorAll('.testimonial-slide');
+        const dots = document.querySelectorAll('.slider-dot');
+        function showSlide(i) { slides.forEach(s => s.classList.remove('active')); dots.forEach(d => d.classList.remove('active')); slides[i].classList.add('active'); dots[i].classList.add('active'); currentSlide = i; }
+        setInterval(() => { currentSlide = (currentSlide + 1) % slides.length; showSlide(currentSlide); }, 5000);
+    </script>
+</body>
+</html>
