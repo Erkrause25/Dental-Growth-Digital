@@ -73,7 +73,8 @@
         .service-features svg { width: 20px; height: 20px; stroke: var(--accent); flex-shrink: 0; margin-top: 2px; }
         .service-features span { font-size: 15px; color: var(--text-700); }
 
-        .service-pricing { margin-top: 32px; padding: 24px; background: var(--gray-50); border-radius: 12px; border: 1px solid var(--gray-200); }
+        .service-pricing { display: block; text-decoration: none; margin-top: 32px; padding: 24px; background: var(--gray-50); border-radius: 12px; border: 1px solid var(--gray-200); transition: all 0.2s; cursor: pointer; }
+        .service-pricing:hover { background: var(--primary-light); border-color: var(--primary); transform: translateY(-2px); box-shadow: 0 4px 12px rgba(37, 99, 235, 0.15); }
         .service-pricing .price-label { font-size: 12px; font-weight: 600; color: var(--text-400); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 4px; }
         .service-pricing .price-value { font-size: 28px; font-weight: 800; color: var(--text-900); }
         .service-pricing .price-note { font-size: 14px; color: var(--text-500); margin-top: 8px; }
@@ -183,11 +184,11 @@
                         <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg><span>Fast loading speeds (under 3 seconds)</span></li>
                         <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg><span>Before/after photo galleries</span></li>
                     </ul>
-                    <div class="service-pricing">
+                    <a href="pricing.html" class="service-pricing">
                         <div class="price-label">Starting at</div>
                         <div class="price-value">$3,500 - $6,500</div>
                         <div class="price-note">One-time payment. Optional maintenance from $250/mo.</div>
-                    </div>
+                    </a>
                 </div>
                 <div class="service-visual">
                     <div class="service-visual-inner">
@@ -211,11 +212,11 @@
                         <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg><span>Call tracking and conversion reporting</span></li>
                         <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg><span>Monthly performance reports</span></li>
                     </ul>
-                    <div class="service-pricing">
+                    <a href="pricing.html" class="service-pricing">
                         <div class="price-label">Management fee</div>
                         <div class="price-value">$700 - $1,200/mo</div>
                         <div class="price-note">Plus ad spend paid directly to Google ($400-$1,200/mo recommended).</div>
-                    </div>
+                    </a>
                 </div>
                 <div class="service-visual">
                     <div class="service-visual-inner">
@@ -239,11 +240,11 @@
                         <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg><span>Review generation strategy</span></li>
                         <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg><span>Monthly ranking reports</span></li>
                     </ul>
-                    <div class="service-pricing">
+                    <a href="pricing.html" class="service-pricing">
                         <div class="price-label">Monthly investment</div>
                         <div class="price-value">$500 - $1,000/mo</div>
                         <div class="price-note">Results typically visible within 3-6 months.</div>
-                    </div>
+                    </a>
                 </div>
                 <div class="service-visual">
                     <div class="service-visual-inner">
