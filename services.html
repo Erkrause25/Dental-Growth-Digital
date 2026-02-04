@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Services | Dental Growth Digital - Web Design, SEO & Marketing for Dentists</title>
-    <meta name="description" content="Comprehensive web design, SEO, and digital marketing services for dental practices. Custom websites, local SEO, review management, and more.">
+    <title>Services | Dental Growth Digital - Web Design, Google Ads & SEO for Dentists</title>
+    <meta name="description" content="Professional dental website design, Google Ads management, and SEO services for dental practices in NJ and PA. Get more patients with our proven strategies.">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -45,13 +45,25 @@
         .hero h1 { font-size: 48px; font-weight: 800; color: var(--text-900); letter-spacing: -1.5px; margin-bottom: 16px; }
         .hero p { font-size: 18px; color: var(--text-500); max-width: 600px; margin: 0 auto; }
 
+        .services-overview { padding: 80px 32px; background: var(--white); }
+        .services-overview .container { max-width: 1200px; margin: 0 auto; }
+        .services-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px; }
+        .service-card { background: var(--gray-50); border-radius: 16px; padding: 40px; border: 1px solid var(--gray-200); text-align: center; transition: transform 0.2s, box-shadow 0.2s; }
+        .service-card:hover { transform: translateY(-4px); box-shadow: 0 12px 40px rgba(0,0,0,0.08); }
+        .service-icon { width: 72px; height: 72px; background: var(--primary-light); border-radius: 16px; display: flex; align-items: center; justify-content: center; margin: 0 auto 24px; }
+        .service-icon svg { width: 36px; height: 36px; stroke: var(--primary); }
+        .service-card h3 { font-size: 24px; font-weight: 700; color: var(--text-900); margin-bottom: 12px; }
+        .service-card p { font-size: 15px; color: var(--text-500); margin-bottom: 20px; }
+        .service-card .price { font-size: 14px; font-weight: 600; color: var(--primary); background: var(--primary-light); padding: 8px 16px; border-radius: 100px; display: inline-block; }
+
         .services-section { padding: 100px 32px; }
         .section-container { max-width: 1200px; margin: 0 auto; }
 
-        .service-block { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; margin-bottom: 120px; }
+        .service-block { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; margin-bottom: 120px; padding-top: 40px; }
         .service-block:nth-child(even) .service-content { order: 2; }
         .service-block:last-child { margin-bottom: 0; }
 
+        .service-number { font-size: 14px; font-weight: 700; color: var(--primary); letter-spacing: 2px; text-transform: uppercase; margin-bottom: 16px; }
         .service-content h2 { font-size: 36px; font-weight: 800; color: var(--text-900); margin-bottom: 16px; letter-spacing: -0.5px; }
         .service-content > p { font-size: 17px; color: var(--text-500); margin-bottom: 32px; line-height: 1.7; }
 
@@ -61,35 +73,21 @@
         .service-features svg { width: 20px; height: 20px; stroke: var(--accent); flex-shrink: 0; margin-top: 2px; }
         .service-features span { font-size: 15px; color: var(--text-700); }
 
+        .service-pricing { margin-top: 32px; padding: 24px; background: var(--gray-50); border-radius: 12px; border: 1px solid var(--gray-200); }
+        .service-pricing .price-label { font-size: 12px; font-weight: 600; color: var(--text-400); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 4px; }
+        .service-pricing .price-value { font-size: 28px; font-weight: 800; color: var(--text-900); }
+        .service-pricing .price-note { font-size: 14px; color: var(--text-500); margin-top: 8px; }
+
         .service-visual { background: var(--gray-50); border-radius: 20px; padding: 48px; border: 1px solid var(--gray-200); }
         .service-visual-inner { background: var(--white); border-radius: 12px; padding: 40px; border: 2px dashed var(--gray-300); display: flex; flex-direction: column; align-items: center; justify-content: center; min-height: 300px; }
         .service-visual-inner svg { width: 48px; height: 48px; stroke: var(--text-400); margin-bottom: 16px; }
         .service-visual-inner span { font-size: 14px; color: var(--text-400); font-weight: 500; }
 
-        .pricing-section { padding: 100px 32px; background: var(--gray-50); }
-        .pricing-header { text-align: center; margin-bottom: 64px; }
-        .pricing-header h2 { font-size: 40px; font-weight: 800; color: var(--text-900); margin-bottom: 16px; }
-        .pricing-header p { font-size: 18px; color: var(--text-500); }
-
-        .pricing-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px; max-width: 1100px; margin: 0 auto; }
-        .pricing-card { background: var(--white); border-radius: 16px; padding: 40px; border: 1px solid var(--gray-200); }
-        .pricing-card.featured { border: 2px solid var(--primary); position: relative; }
-        .pricing-card.featured::before { content: 'Most Popular'; position: absolute; top: -12px; left: 50%; transform: translateX(-50%); background: var(--primary); color: white; padding: 4px 16px; border-radius: 100px; font-size: 12px; font-weight: 600; }
-        .pricing-name { font-size: 14px; font-weight: 600; color: var(--primary); letter-spacing: 1px; text-transform: uppercase; margin-bottom: 8px; }
-        .pricing-price { font-size: 48px; font-weight: 800; color: var(--text-900); margin-bottom: 8px; }
-        .pricing-price span { font-size: 16px; font-weight: 500; color: var(--text-400); }
-        .pricing-description { font-size: 15px; color: var(--text-500); margin-bottom: 32px; padding-bottom: 32px; border-bottom: 1px solid var(--gray-200); }
-        .pricing-features { list-style: none; margin-bottom: 32px; }
-        .pricing-features li { display: flex; align-items: center; gap: 10px; padding: 8px 0; font-size: 14px; color: var(--text-700); }
-        .pricing-features svg { width: 16px; height: 16px; stroke: var(--accent); }
-        .btn-primary { display: block; text-align: center; background: var(--text-900); color: var(--white); padding: 14px 28px; border-radius: 8px; text-decoration: none; font-weight: 600; font-size: 15px; }
-        .btn-primary:hover { background: var(--primary); }
-
         .cta-section { padding: 100px 32px; background: var(--primary); text-align: center; }
         .cta-section h2 { font-size: 40px; font-weight: 800; color: var(--white); margin-bottom: 16px; }
         .cta-section p { font-size: 18px; color: rgba(255,255,255,0.8); margin-bottom: 32px; }
-        .cta-section .btn-primary { display: inline-block; background: var(--white); color: var(--text-900); }
-        .cta-section .btn-primary:hover { background: var(--gray-100); }
+        .btn-primary { display: inline-block; background: var(--white); color: var(--text-900); padding: 16px 32px; border-radius: 8px; text-decoration: none; font-weight: 600; font-size: 16px; }
+        .btn-primary:hover { background: var(--gray-100); }
 
         .footer { background: var(--text-900); color: var(--white); padding: 72px 32px 32px; }
         .footer-container { max-width: 1200px; margin: 0 auto; }
@@ -101,9 +99,9 @@
         .footer-bottom p, .footer-bottom a { color: var(--text-400); font-size: 13px; text-decoration: none; }
 
         @media (max-width: 1024px) {
+            .services-grid { grid-template-columns: 1fr; max-width: 400px; margin: 0 auto; }
             .service-block { grid-template-columns: 1fr; gap: 40px; }
             .service-block:nth-child(even) .service-content { order: 0; }
-            .pricing-grid { grid-template-columns: 1fr; max-width: 400px; }
             .footer-top { grid-template-columns: 1fr 1fr; }
         }
         @media (max-width: 768px) {
@@ -117,153 +115,141 @@
 <body>
     <nav class="nav">
         <div class="nav-container">
-            <a href="https://dentalgrowthdigital.com" class="logo">
+            <a href="index.html" class="logo">
                 <div class="logo-mark"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C8.5 2 6 4.5 6 7.5c0 2 1 3.5 2 4.5v8c0 1.1.9 2 2 2h4c1.1 0 2-.9 2-2v-8c1-1 2-2.5 2-4.5C18 4.5 15.5 2 12 2z"/></svg></div>
                 <span class="logo-text">Dental Growth Digital</span>
             </a>
             <div class="nav-links">
-                <a href="https://dentalgrowthdigital.com">Home</a>
-                <a href="https://dentalgrowthdigital.com/services.html" class="active">Services</a>
-                <a href="index.html#portfolio">Portfolio</a>
-                <a href="https://dentalgrowthdigital.com/about.html">About</a>
-                <a href="https://dentalgrowthdigital.com/contact.html" class="nav-cta">Get Started</a>
+                <a href="index.html">Home</a>
+                <a href="services.html" class="active">Services</a>
+                <a href="portfolio.html">Portfolio</a>
+                <a href="pricing.html">Pricing</a>
+                <a href="about.html">About</a>
+                <a href="contact.html" class="nav-cta">Get Started</a>
             </div>
         </div>
     </nav>
 
     <section class="hero">
         <h1>Our Services</h1>
-        <p>Everything your dental practice needs to thrive online—from stunning websites to powerful marketing that drives patient growth.</p>
+        <p>Three focused services to grow your dental practice: stunning websites, targeted Google Ads, and local SEO that gets you found.</p>
     </section>
 
-    <section class="services-section">
-        <div class="section-container">
-            <div class="service-block">
-                <div class="service-content">
-                    <h2>Custom Website Design</h2>
-                    <p>Beautiful, conversion-optimized websites designed specifically for dental practices. Every site we build is tailored to your specialty, brand, and patient base.</p>
-                    <ul class="service-features">
-                        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg><span>Custom design tailored to your brand and specialty</span></li>
-                        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg><span>Mobile-first responsive layouts</span></li>
-                        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg><span>Online booking integration</span></li>
-                        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg><span>HIPAA-compliant contact forms</span></li>
-                        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg><span>Fast loading speeds optimized for SEO</span></li>
-                    </ul>
-                </div>
-                <div class="service-visual">
-                    <div class="service-visual-inner">
+    <!-- Services Overview Cards -->
+    <section class="services-overview">
+        <div class="container">
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">
                         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
-                        <span>Website Design Preview</span>
                     </div>
+                    <h3>Website Design</h3>
+                    <p>Custom dental websites that convert visitors into patients</p>
+                    <span class="price">From $3,500</span>
                 </div>
-            </div>
-
-            <div class="service-block">
-                <div class="service-content">
-                    <h2>Local SEO & Search Rankings</h2>
-                    <p>Dominate Google search results in your area. Our dental-focused SEO strategies put you at the top when patients search for a dentist near them.</p>
-                    <ul class="service-features">
-                        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg><span>Google Business Profile optimization</span></li>
-                        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg><span>Local citation building (50+ directories)</span></li>
-                        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg><span>Keyword research and on-page SEO</span></li>
-                        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg><span>Content strategy and blog writing</span></li>
-                        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg><span>Monthly ranking reports</span></li>
-                    </ul>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
+                    </div>
+                    <h3>Google Ads</h3>
+                    <p>Targeted ads that bring new patients to your practice</p>
+                    <span class="price">From $700/mo</span>
                 </div>
-                <div class="service-visual">
-                    <div class="service-visual-inner">
+                <div class="service-card">
+                    <div class="service-icon">
                         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
-                        <span>SEO Dashboard Preview</span>
                     </div>
-                </div>
-            </div>
-
-            <div class="service-block">
-                <div class="service-content">
-                    <h2>Review Management</h2>
-                    <p>Build a stellar online reputation that attracts new patients. We help you generate more reviews and respond professionally to all feedback.</p>
-                    <ul class="service-features">
-                        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg><span>Automated review request system</span></li>
-                        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg><span>Multi-platform monitoring (Google, Yelp, Facebook)</span></li>
-                        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg><span>Professional response templates</span></li>
-                        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg><span>Negative review mitigation strategies</span></li>
-                        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg><span>Review widget for your website</span></li>
-                    </ul>
-                </div>
-                <div class="service-visual">
-                    <div class="service-visual-inner">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-                        <span>Review Dashboard Preview</span>
-                    </div>
-                </div>
-            </div>
-
-            <div class="service-block">
-                <div class="service-content">
-                    <h2>Paid Advertising</h2>
-                    <p>Get immediate visibility with precision-targeted Google Ads. We specialize in high-ROI campaigns for new patient acquisition.</p>
-                    <ul class="service-features">
-                        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg><span>Google Ads campaign setup and management</span></li>
-                        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg><span>Keyword bidding optimization</span></li>
-                        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg><span>Ad copy A/B testing</span></li>
-                        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg><span>Landing page optimization</span></li>
-                        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg><span>Call tracking and conversion reporting</span></li>
-                    </ul>
-                </div>
-                <div class="service-visual">
-                    <div class="service-visual-inner">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
-                        <span>Ads Performance Preview</span>
-                    </div>
+                    <h3>SEO & Content</h3>
+                    <p>Rank higher in local searches and attract organic traffic</p>
+                    <span class="price">From $500/mo</span>
                 </div>
             </div>
         </div>
     </section>
 
-    <section class="pricing-section">
+    <section class="services-section">
         <div class="section-container">
-            <div class="pricing-header">
-                <h2>Transparent Pricing</h2>
-                <p>Choose the plan that fits your practice. No hidden fees, no long-term contracts.</p>
+            <!-- Service 1: Website Design -->
+            <div class="service-block" id="website-design">
+                <div class="service-content">
+                    <div class="service-number">Service 01</div>
+                    <h2>Custom Website Design</h2>
+                    <p>Your website is often the first impression potential patients have of your practice. We design beautiful, fast-loading websites specifically for dental practices that build trust and convert visitors into appointments.</p>
+                    <ul class="service-features">
+                        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg><span>Custom design tailored to your brand and specialty</span></li>
+                        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg><span>Mobile-first responsive layouts</span></li>
+                        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg><span>Online appointment booking integration</span></li>
+                        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg><span>HIPAA-compliant contact forms</span></li>
+                        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg><span>Fast loading speeds (under 3 seconds)</span></li>
+                        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg><span>Before/after photo galleries</span></li>
+                    </ul>
+                    <div class="service-pricing">
+                        <div class="price-label">Starting at</div>
+                        <div class="price-value">$3,500 - $6,500</div>
+                        <div class="price-note">One-time payment. Optional maintenance from $250/mo.</div>
+                    </div>
+                </div>
+                <div class="service-visual">
+                    <div class="service-visual-inner">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+                        <span>Custom Dental Website</span>
+                    </div>
+                </div>
             </div>
-            <div class="pricing-grid">
-                <div class="pricing-card">
-                    <div class="pricing-name">Starter</div>
-                    <div class="pricing-price">$1,500<span>/mo</span></div>
-                    <p class="pricing-description">Perfect for practices just getting started with digital marketing.</p>
-                    <ul class="pricing-features">
-                        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>Local SEO optimization</li>
-                        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>Google Business Profile</li>
-                        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>Monthly reporting</li>
-                        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>5 blog posts per month</li>
+
+            <!-- Service 2: Google Ads -->
+            <div class="service-block" id="google-ads">
+                <div class="service-content">
+                    <div class="service-number">Service 02</div>
+                    <h2>Google Ads Management</h2>
+                    <p>Get immediate visibility when people search for a dentist in your area. We create and manage Google Ads campaigns that target patients actively looking for dental services, delivering measurable ROI.</p>
+                    <ul class="service-features">
+                        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg><span>Campaign setup and strategy</span></li>
+                        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg><span>Keyword research for dental services</span></li>
+                        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg><span>Ad copy writing and A/B testing</span></li>
+                        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg><span>Landing page optimization</span></li>
+                        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg><span>Call tracking and conversion reporting</span></li>
+                        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg><span>Monthly performance reports</span></li>
                     </ul>
-                    <a href="https://dentalgrowthdigital.com/contact.html" class="btn-primary">Get Started</a>
+                    <div class="service-pricing">
+                        <div class="price-label">Management fee</div>
+                        <div class="price-value">$700 - $1,200/mo</div>
+                        <div class="price-note">Plus ad spend paid directly to Google ($400-$1,200/mo recommended).</div>
+                    </div>
                 </div>
-                <div class="pricing-card featured">
-                    <div class="pricing-name">Professional</div>
-                    <div class="pricing-price">$3,000<span>/mo</span></div>
-                    <p class="pricing-description">Our most popular plan for growing dental practices.</p>
-                    <ul class="pricing-features">
-                        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>Everything in Starter</li>
-                        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>Google Ads management</li>
-                        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>Review generation system</li>
-                        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>Content marketing</li>
-                        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>Quarterly strategy calls</li>
-                    </ul>
-                    <a href="https://dentalgrowthdigital.com/contact.html" class="btn-primary">Get Started</a>
+                <div class="service-visual">
+                    <div class="service-visual-inner">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
+                        <span>Google Ads Dashboard</span>
+                    </div>
                 </div>
-                <div class="pricing-card">
-                    <div class="pricing-name">Enterprise</div>
-                    <div class="pricing-price">$5,000<span>/mo</span></div>
-                    <p class="pricing-description">For multi-location practices and aggressive growth goals.</p>
-                    <ul class="pricing-features">
-                        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>Everything in Professional</li>
-                        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>Multi-location support</li>
-                        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>Dedicated strategist</li>
-                        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>Custom integrations</li>
-                        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>Priority support</li>
+            </div>
+
+            <!-- Service 3: SEO & Content -->
+            <div class="service-block" id="seo-content">
+                <div class="service-content">
+                    <div class="service-number">Service 03</div>
+                    <h2>SEO & Content Marketing</h2>
+                    <p>Rank higher in local search results and attract patients organically. We optimize your online presence so when someone searches "dentist near me" in your area, your practice shows up first.</p>
+                    <ul class="service-features">
+                        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg><span>Google Business Profile optimization</span></li>
+                        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg><span>Local citation building (50+ directories)</span></li>
+                        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg><span>On-page SEO optimization</span></li>
+                        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg><span>Monthly blog content (dental topics)</span></li>
+                        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg><span>Review generation strategy</span></li>
+                        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg><span>Monthly ranking reports</span></li>
                     </ul>
-                    <a href="https://dentalgrowthdigital.com/contact.html" class="btn-primary">Get Started</a>
+                    <div class="service-pricing">
+                        <div class="price-label">Monthly investment</div>
+                        <div class="price-value">$500 - $1,000/mo</div>
+                        <div class="price-note">Results typically visible within 3-6 months.</div>
+                    </div>
+                </div>
+                <div class="service-visual">
+                    <div class="service-visual-inner">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+                        <span>SEO Performance Dashboard</span>
+                    </div>
                 </div>
             </div>
         </div>
@@ -271,43 +257,43 @@
 
     <section class="cta-section">
         <h2>Ready to Grow Your Practice?</h2>
-        <p>Get a free website audit and discover opportunities to attract more patients.</p>
-        <a href="https://dentalgrowthdigital.com/contact.html" class="btn-primary">Schedule Your Free Consultation</a>
+        <p>Get a free consultation and discover which services are right for you.</p>
+        <a href="contact.html" class="btn-primary">Schedule Your Free Consultation</a>
     </section>
 
     <footer class="footer">
         <div class="footer-container">
             <div class="footer-top">
                 <div class="footer-brand">
-                    <a href="https://dentalgrowthdigital.com" class="logo">
+                    <a href="index.html" class="logo">
                         <div class="logo-mark"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C8.5 2 6 4.5 6 7.5c0 2 1 3.5 2 4.5v8c0 1.1.9 2 2 2h4c1.1 0 2-.9 2-2v-8c1-1 2-2.5 2-4.5C18 4.5 15.5 2 12 2z"/></svg></div>
                         <span class="logo-text">Dental Growth Digital</span>
                     </a>
-                    <p>Specialized web design for dental practices in New Jersey and the Philadelphia Main Line.</p>
+                    <p>Specialized web design and digital marketing for dental practices in New Jersey and the Philadelphia Main Line.</p>
+                </div>
+                <div class="footer-column">
+                    <h4>Services</h4>
+                    <a href="services.html#website-design">Website Design</a>
+                    <a href="services.html#google-ads">Google Ads</a>
+                    <a href="services.html#seo-content">SEO & Content</a>
                 </div>
                 <div class="footer-column">
                     <h4>Specialties</h4>
                     <a href="https://pediatric.dentalgrowthdigital.com">Pediatric</a>
-                    <a href="https://orthodontic.dentalgrowthdigital.com">Orthodontic</a>
-                    <a href="https://cosmetic.dentalgrowthdigital.com">Cosmetic</a>
-                    <a href="https://general.dentalgrowthdigital.com">General</a>
-                </div>
-                <div class="footer-column">
-                    <h4>Services</h4>
-                    <a href="https://dentalgrowthdigital.com/services.html">Web Design</a>
-                    <a href="https://dentalgrowthdigital.com/services.html">SEO</a>
-                    <a href="https://dentalgrowthdigital.com/services.html">Branding</a>
-                    <a href="https://dentalgrowthdigital.com/services.html">Marketing</a>
+                    <a href="orthodontist-websites.html">Orthodontic</a>
+                    <a href="cosmetic-dentistry-websites.html">Cosmetic</a>
+                    <a href="family-dentist-websites.html">Family</a>
                 </div>
                 <div class="footer-column">
                     <h4>Company</h4>
-                    <a href="https://dentalgrowthdigital.com/about.html">About Us</a>
-                    <a href="index.html#portfolio">Portfolio</a>
-                    <a href="https://dentalgrowthdigital.com/contact.html">Contact</a>
+                    <a href="about.html">About Us</a>
+                    <a href="portfolio.html">Portfolio</a>
+                    <a href="pricing.html">Pricing</a>
+                    <a href="contact.html">Contact</a>
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>© 2026 Dental Growth Digital. All rights reserved.</p>
+                <p>&copy; 2025 Dental Growth Digital. All rights reserved.</p>
                 <div><a href="#">Privacy Policy</a></div>
             </div>
         </div>
