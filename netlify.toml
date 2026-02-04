@@ -14,13 +14,13 @@
 # Redirect pediatric subdomain to demo site
 [[redirects]]
   from = "https://pediatric.dentalgrowthdigital.com/*"
-  to = "https://kaleidoscopic-sorbet-a20b0f.netlify.app/demos/pediatric/:splat"
+  to = "/demos/pediatric/:splat"
   status = 200
   force = true
 
 [[redirects]]
   from = "https://pediatric.dentalgrowthdigital.com"
-  to = "https://kaleidoscopic-sorbet-a20b0f.netlify.app/demos/pediatric/"
+  to = "/demos/pediatric/index.html"
   status = 200
   force = true
 
