@@ -1,0 +1,5 @@
+# Pediatric subdomain routing
+https://pediatric.dentalgrowthdigital.com/* /demos/pediatric/:splat 200!
+
+# WWW redirect
+https://www.dentalgrowthdigital.com/* https://dentalgrowthdigital.com/:splat 301!
