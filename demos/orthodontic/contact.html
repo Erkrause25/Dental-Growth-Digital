@@ -1,0 +1,925 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us | Smile Transformation Orthodontics</title>
+    <meta name="description" content="Contact Smile Transformation Orthodontics in Haddonfield, NJ. Schedule your free consultation today! Call (856) 555-0123 or fill out our online form.">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        :root {
+            --primary: #6366f1;
+            --primary-dark: #4f46e5;
+            --primary-light: #eef2ff;
+            --secondary: #0ea5e9;
+            --secondary-light: #e0f2fe;
+            --accent: #f59e0b;
+            --text-900: #0f172a;
+            --text-700: #334155;
+            --text-500: #64748b;
+            --text-400: #94a3b8;
+            --white: #ffffff;
+            --gray-50: #f8fafc;
+            --gray-100: #f1f5f9;
+            --gray-200: #e2e8f0;
+            --gradient: linear-gradient(135deg, #6366f1 0%, #0ea5e9 100%);
+        }
+
+        body {
+            font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+            color: var(--text-700);
+            line-height: 1.6;
+            background: var(--white);
+        }
+
+        h1, h2, h3 { font-family: 'Playfair Display', serif; }
+
+        /* Navigation */
+        .nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--gray-200);
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 80px;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            text-decoration: none;
+        }
+
+        .logo-icon {
+            width: 48px;
+            height: 48px;
+            background: var(--gradient);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .logo-icon svg { width: 28px; height: 28px; fill: white; }
+
+        .logo-text {
+            font-family: 'Playfair Display', serif;
+            font-size: 22px;
+            font-weight: 700;
+            color: var(--text-900);
+        }
+
+        .logo-text span { color: var(--primary); }
+
+        .nav-links {
+            display: flex;
+            gap: 32px;
+            align-items: center;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-700);
+            font-size: 15px;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+
+        .nav-links a:hover { color: var(--primary); }
+
+        .nav-cta {
+            background: var(--gradient);
+            color: var(--white) !important;
+            padding: 12px 24px;
+            border-radius: 50px;
+            font-weight: 600;
+        }
+
+        .nav-cta:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(99, 102, 241, 0.3);
+        }
+
+        .mobile-menu {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 8px;
+        }
+
+        .mobile-menu span {
+            width: 24px;
+            height: 2px;
+            background: var(--text-900);
+            border-radius: 2px;
+        }
+
+        /* Page Header */
+        .page-header {
+            padding: 160px 24px 80px;
+            background: linear-gradient(180deg, var(--primary-light) 0%, var(--white) 100%);
+            text-align: center;
+        }
+
+        .page-header h1 {
+            font-size: 52px;
+            color: var(--text-900);
+            margin-bottom: 20px;
+        }
+
+        .page-header h1 span {
+            background: var(--gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .page-header p {
+            font-size: 20px;
+            color: var(--text-500);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* Contact Section */
+        .contact-section {
+            padding: 80px 24px;
+            background: var(--white);
+        }
+
+        .contact-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+        }
+
+        /* Contact Info */
+        .contact-info {
+            padding: 20px 0;
+        }
+
+        .contact-info h2 {
+            font-size: 36px;
+            color: var(--text-900);
+            margin-bottom: 24px;
+        }
+
+        .contact-info > p {
+            font-size: 17px;
+            color: var(--text-500);
+            line-height: 1.7;
+            margin-bottom: 40px;
+        }
+
+        .contact-details {
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+            margin-bottom: 48px;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 20px;
+        }
+
+        .contact-icon {
+            width: 56px;
+            height: 56px;
+            background: var(--primary-light);
+            border-radius: 14px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .contact-icon svg {
+            width: 24px;
+            height: 24px;
+            stroke: var(--primary);
+            fill: none;
+            stroke-width: 2;
+        }
+
+        .contact-item-content h4 {
+            font-family: 'DM Sans', sans-serif;
+            font-size: 16px;
+            font-weight: 600;
+            color: var(--text-900);
+            margin-bottom: 4px;
+        }
+
+        .contact-item-content p {
+            font-size: 15px;
+            color: var(--text-500);
+            line-height: 1.6;
+        }
+
+        .contact-item-content a {
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .contact-item-content a:hover {
+            text-decoration: underline;
+        }
+
+        /* Hours */
+        .hours-section {
+            background: var(--gray-50);
+            padding: 32px;
+            border-radius: 20px;
+            border: 1px solid var(--gray-200);
+        }
+
+        .hours-section h3 {
+            font-size: 20px;
+            color: var(--text-900);
+            margin-bottom: 20px;
+        }
+
+        .hours-grid {
+            display: grid;
+            gap: 12px;
+        }
+
+        .hours-row {
+            display: flex;
+            justify-content: space-between;
+            font-size: 15px;
+        }
+
+        .hours-day {
+            color: var(--text-700);
+            font-weight: 500;
+        }
+
+        .hours-time {
+            color: var(--text-500);
+        }
+
+        .hours-time.closed {
+            color: var(--text-400);
+        }
+
+        /* Contact Form */
+        .contact-form-wrapper {
+            background: var(--gray-50);
+            padding: 48px;
+            border-radius: 24px;
+            border: 1px solid var(--gray-200);
+        }
+
+        .contact-form-wrapper h3 {
+            font-size: 28px;
+            color: var(--text-900);
+            margin-bottom: 8px;
+        }
+
+        .contact-form-wrapper > p {
+            font-size: 16px;
+            color: var(--text-500);
+            margin-bottom: 32px;
+        }
+
+        .contact-form {
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .form-group label {
+            font-size: 14px;
+            font-weight: 600;
+            color: var(--text-700);
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            padding: 14px 18px;
+            border: 2px solid var(--gray-200);
+            border-radius: 12px;
+            font-size: 15px;
+            font-family: inherit;
+            color: var(--text-700);
+            background: var(--white);
+            transition: border-color 0.2s;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--primary);
+        }
+
+        .form-group input::placeholder,
+        .form-group textarea::placeholder {
+            color: var(--text-400);
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+
+        .form-checkbox {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+        }
+
+        .form-checkbox input {
+            width: 20px;
+            height: 20px;
+            margin-top: 2px;
+            accent-color: var(--primary);
+        }
+
+        .form-checkbox label {
+            font-size: 14px;
+            color: var(--text-500);
+            line-height: 1.5;
+        }
+
+        .btn-submit {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            background: var(--gradient);
+            color: var(--white);
+            padding: 16px 32px;
+            border-radius: 50px;
+            border: none;
+            font-weight: 600;
+            font-size: 16px;
+            font-family: inherit;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .btn-submit:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 24px rgba(99, 102, 241, 0.35);
+        }
+
+        .btn-submit svg {
+            width: 18px;
+            height: 18px;
+        }
+
+        /* Map Section */
+        .map-section {
+            padding: 0 24px 80px;
+            background: var(--white);
+        }
+
+        .map-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .map-placeholder {
+            width: 100%;
+            height: 400px;
+            background: linear-gradient(135deg, #e0e7ff 0%, #bae6fd 100%);
+            border-radius: 24px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .map-placeholder svg {
+            width: 64px;
+            height: 64px;
+            stroke: var(--text-400);
+            fill: none;
+            stroke-width: 1.5;
+            margin-bottom: 16px;
+        }
+
+        .map-placeholder span {
+            font-size: 18px;
+            font-weight: 600;
+            color: var(--text-500);
+        }
+
+        .map-placeholder p {
+            font-size: 14px;
+            color: var(--text-400);
+            margin-top: 4px;
+        }
+
+        /* Insurance Section */
+        .insurance-section {
+            padding: 80px 24px;
+            background: var(--gray-50);
+        }
+
+        .insurance-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .section-label {
+            display: inline-block;
+            font-size: 13px;
+            font-weight: 600;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: var(--primary);
+            margin-bottom: 16px;
+        }
+
+        .insurance-container h2 {
+            font-size: 36px;
+            color: var(--text-900);
+            margin-bottom: 16px;
+        }
+
+        .insurance-container > p {
+            font-size: 17px;
+            color: var(--text-500);
+            margin-bottom: 40px;
+        }
+
+        .insurance-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 24px;
+        }
+
+        .insurance-card {
+            background: var(--white);
+            padding: 32px 24px;
+            border-radius: 16px;
+            border: 1px solid var(--gray-200);
+        }
+
+        .insurance-card h4 {
+            font-family: 'DM Sans', sans-serif;
+            font-size: 16px;
+            font-weight: 600;
+            color: var(--text-900);
+        }
+
+        /* Footer */
+        .footer {
+            background: var(--text-900);
+            color: var(--white);
+            padding: 80px 24px 32px;
+        }
+
+        .footer-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .footer-top {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 64px;
+            margin-bottom: 64px;
+        }
+
+        .footer-brand .logo { margin-bottom: 20px; }
+        .footer-brand .logo-text { color: var(--white); }
+
+        .footer-brand p {
+            color: var(--text-400);
+            font-size: 15px;
+            line-height: 1.7;
+            margin-bottom: 24px;
+            max-width: 280px;
+        }
+
+        .footer-social {
+            display: flex;
+            gap: 12px;
+        }
+
+        .footer-social a {
+            width: 40px;
+            height: 40px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: background 0.2s;
+        }
+
+        .footer-social a:hover { background: var(--primary); }
+        .footer-social svg { width: 20px; height: 20px; fill: var(--white); }
+
+        .footer-column h4 {
+            font-family: 'DM Sans', sans-serif;
+            font-size: 14px;
+            font-weight: 600;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            color: var(--text-400);
+            margin-bottom: 24px;
+        }
+
+        .footer-column a {
+            display: block;
+            color: rgba(255, 255, 255, 0.7);
+            text-decoration: none;
+            font-size: 15px;
+            margin-bottom: 14px;
+            transition: color 0.2s;
+        }
+
+        .footer-column a:hover { color: var(--white); }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding-top: 32px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .footer-bottom p {
+            color: var(--text-400);
+            font-size: 14px;
+        }
+
+        .footer-bottom-links {
+            display: flex;
+            gap: 24px;
+        }
+
+        .footer-bottom-links a {
+            color: var(--text-400);
+            text-decoration: none;
+            font-size: 14px;
+        }
+
+        .footer-bottom-links a:hover { color: var(--white); }
+
+        /* Responsive */
+        @media (max-width: 1024px) {
+            .contact-container {
+                grid-template-columns: 1fr;
+                gap: 60px;
+            }
+
+            .insurance-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .footer-top {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav-links { display: none; }
+            .mobile-menu { display: flex; }
+
+            .page-header {
+                padding: 120px 24px 60px;
+            }
+
+            .page-header h1 {
+                font-size: 36px;
+            }
+
+            .contact-info h2 {
+                font-size: 28px;
+            }
+
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+
+            .contact-form-wrapper {
+                padding: 32px 24px;
+            }
+
+            .insurance-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-top {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-bottom {
+                flex-direction: column;
+                gap: 16px;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="nav">
+        <div class="nav-container">
+            <a href="index.html" class="logo">
+                <div class="logo-icon">
+                    <svg viewBox="0 0 24 24">
+                        <path d="M12 2C8 2 5 5 5 8.5c0 2.5 1.5 4.5 3 6v5.5c0 1.1.9 2 2 2h4c1.1 0 2-.9 2-2v-5.5c1.5-1.5 3-3.5 3-6C19 5 16 2 12 2z"/>
+                    </svg>
+                </div>
+                <span class="logo-text">Smile <span>Transformation</span></span>
+            </a>
+            <div class="nav-links">
+                <a href="about.html">About Us</a>
+                <a href="services.html">Treatments</a>
+                <a href="invisalign.html">Invisalign</a>
+                <a href="before-after.html">Results</a>
+                <a href="contact.html" class="nav-cta">Free Consultation</a>
+            </div>
+            <button class="mobile-menu" aria-label="Menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <h1>Contact <span>Us</span></h1>
+        <p>Ready to start your smile journey? We'd love to hear from you. Schedule your free consultation today!</p>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact-section">
+        <div class="contact-container">
+            <div class="contact-info">
+                <h2>Get In Touch</h2>
+                <p>Have questions about orthodontic treatment? Want to schedule a consultation? We're here to help. Reach out to us through any of the methods below.</p>
+
+                <div class="contact-details">
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                        </div>
+                        <div class="contact-item-content">
+                            <h4>Phone</h4>
+                            <p><a href="tel:856-555-0123">(856) 555-0123</a></p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                        </div>
+                        <div class="contact-item-content">
+                            <h4>Email</h4>
+                            <p><a href="mailto:info@smiletransformation.com">info@smiletransformation.com</a></p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                        </div>
+                        <div class="contact-item-content">
+                            <h4>Location</h4>
+                            <p>123 Main Street<br>Haddonfield, NJ 08033</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="hours-section">
+                    <h3>Office Hours</h3>
+                    <div class="hours-grid">
+                        <div class="hours-row">
+                            <span class="hours-day">Monday</span>
+                            <span class="hours-time">8:00 AM - 6:00 PM</span>
+                        </div>
+                        <div class="hours-row">
+                            <span class="hours-day">Tuesday</span>
+                            <span class="hours-time">8:00 AM - 6:00 PM</span>
+                        </div>
+                        <div class="hours-row">
+                            <span class="hours-day">Wednesday</span>
+                            <span class="hours-time">8:00 AM - 6:00 PM</span>
+                        </div>
+                        <div class="hours-row">
+                            <span class="hours-day">Thursday</span>
+                            <span class="hours-time">8:00 AM - 6:00 PM</span>
+                        </div>
+                        <div class="hours-row">
+                            <span class="hours-day">Friday</span>
+                            <span class="hours-time">8:00 AM - 5:00 PM</span>
+                        </div>
+                        <div class="hours-row">
+                            <span class="hours-day">Saturday</span>
+                            <span class="hours-time">9:00 AM - 2:00 PM</span>
+                        </div>
+                        <div class="hours-row">
+                            <span class="hours-day">Sunday</span>
+                            <span class="hours-time closed">Closed</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="contact-form-wrapper">
+                <h3>Request a Consultation</h3>
+                <p>Fill out the form below and we'll get back to you within 24 hours.</p>
+
+                <form class="contact-form" data-netlify="true" name="orthodontic-contact">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="firstName">First Name *</label>
+                            <input type="text" id="firstName" name="firstName" required placeholder="John">
+                        </div>
+                        <div class="form-group">
+                            <label for="lastName">Last Name *</label>
+                            <input type="text" id="lastName" name="lastName" required placeholder="Doe">
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="email">Email *</label>
+                            <input type="email" id="email" name="email" required placeholder="john@example.com">
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Phone *</label>
+                            <input type="tel" id="phone" name="phone" required placeholder="(856) 555-0123">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="treatment">Treatment Interest</label>
+                        <select id="treatment" name="treatment">
+                            <option value="">Select a treatment...</option>
+                            <option value="braces">Traditional Braces</option>
+                            <option value="clear-braces">Clear Braces</option>
+                            <option value="invisalign">Invisalign</option>
+                            <option value="teen">Teen Orthodontics</option>
+                            <option value="adult">Adult Orthodontics</option>
+                            <option value="other">Not Sure / Other</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Tell Us About Your Smile Goals</label>
+                        <textarea id="message" name="message" placeholder="What would you like to achieve with orthodontic treatment?"></textarea>
+                    </div>
+                    <div class="form-checkbox">
+                        <input type="checkbox" id="consent" name="consent" required>
+                        <label for="consent">I agree to receive communications from Smile Transformation Orthodontics. We respect your privacy and will never share your information.</label>
+                    </div>
+                    <button type="submit" class="btn-submit">
+                        Request Consultation
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M5 12h14M12 5l7 7-7 7"/>
+                        </svg>
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Map Section -->
+    <section class="map-section">
+        <div class="map-container">
+            <div class="map-placeholder">
+                <svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                <span>Interactive Map</span>
+                <p>123 Main Street, Haddonfield, NJ 08033</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Insurance Section -->
+    <section class="insurance-section">
+        <div class="insurance-container">
+            <div class="section-label">Insurance</div>
+            <h2>We Accept Most Insurance Plans</h2>
+            <p>We work with most major insurance providers to help you get the coverage you deserve.</p>
+            <div class="insurance-grid">
+                <div class="insurance-card">
+                    <h4>Delta Dental</h4>
+                </div>
+                <div class="insurance-card">
+                    <h4>Aetna</h4>
+                </div>
+                <div class="insurance-card">
+                    <h4>Cigna</h4>
+                </div>
+                <div class="insurance-card">
+                    <h4>MetLife</h4>
+                </div>
+                <div class="insurance-card">
+                    <h4>United Healthcare</h4>
+                </div>
+                <div class="insurance-card">
+                    <h4>Guardian</h4>
+                </div>
+                <div class="insurance-card">
+                    <h4>Humana</h4>
+                </div>
+                <div class="insurance-card">
+                    <h4>& Many More</h4>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-top">
+                <div class="footer-brand">
+                    <a href="index.html" class="logo">
+                        <div class="logo-icon">
+                            <svg viewBox="0 0 24 24">
+                                <path d="M12 2C8 2 5 5 5 8.5c0 2.5 1.5 4.5 3 6v5.5c0 1.1.9 2 2 2h4c1.1 0 2-.9 2-2v-5.5c1.5-1.5 3-3.5 3-6C19 5 16 2 12 2z"/>
+                            </svg>
+                        </div>
+                        <span class="logo-text">Smile Transformation</span>
+                    </a>
+                    <p>Creating beautiful smiles in South Jersey for over 20 years.</p>
+                    <div class="footer-social">
+                        <a href="#" aria-label="Facebook">
+                            <svg viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+                        </a>
+                        <a href="#" aria-label="Instagram">
+                            <svg viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+                        </a>
+                        <a href="#" aria-label="YouTube">
+                            <svg viewBox="0 0 24 24"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z"/><polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"/></svg>
+                        </a>
+                    </div>
+                </div>
+                <div class="footer-column">
+                    <h4>Treatments</h4>
+                    <a href="services.html">Traditional Braces</a>
+                    <a href="invisalign.html">Invisalign</a>
+                    <a href="services.html">Clear Braces</a>
+                    <a href="services.html">Teen Orthodontics</a>
+                </div>
+                <div class="footer-column">
+                    <h4>Quick Links</h4>
+                    <a href="about.html">About Us</a>
+                    <a href="before-after.html">Before & After</a>
+                    <a href="contact.html">Contact</a>
+                    <a href="#">Patient Forms</a>
+                </div>
+                <div class="footer-column">
+                    <h4>Contact</h4>
+                    <a href="tel:856-555-0123">(856) 555-0123</a>
+                    <a href="mailto:info@smiletransformation.com">info@smiletransformation.com</a>
+                    <a href="#">123 Main Street<br>Haddonfield, NJ 08033</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Smile Transformation Orthodontics. All rights reserved.</p>
+                <div class="footer-bottom-links">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

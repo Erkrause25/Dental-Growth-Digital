@@ -1,0 +1,990 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us | Smile Transformation Orthodontics</title>
+    <meta name="description" content="Meet Dr. Martinez and our dedicated orthodontic team. Learn about our 20+ years of experience creating beautiful smiles in Haddonfield, NJ.">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        :root {
+            --primary: #6366f1;
+            --primary-dark: #4f46e5;
+            --primary-light: #eef2ff;
+            --secondary: #0ea5e9;
+            --secondary-light: #e0f2fe;
+            --accent: #f59e0b;
+            --text-900: #0f172a;
+            --text-700: #334155;
+            --text-500: #64748b;
+            --text-400: #94a3b8;
+            --white: #ffffff;
+            --gray-50: #f8fafc;
+            --gray-100: #f1f5f9;
+            --gray-200: #e2e8f0;
+            --gradient: linear-gradient(135deg, #6366f1 0%, #0ea5e9 100%);
+        }
+
+        body {
+            font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+            color: var(--text-700);
+            line-height: 1.6;
+            background: var(--white);
+        }
+
+        h1, h2, h3 { font-family: 'Playfair Display', serif; }
+
+        /* Navigation */
+        .nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--gray-200);
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 80px;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            text-decoration: none;
+        }
+
+        .logo-icon {
+            width: 48px;
+            height: 48px;
+            background: var(--gradient);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .logo-icon svg { width: 28px; height: 28px; fill: white; }
+
+        .logo-text {
+            font-family: 'Playfair Display', serif;
+            font-size: 22px;
+            font-weight: 700;
+            color: var(--text-900);
+        }
+
+        .logo-text span { color: var(--primary); }
+
+        .nav-links {
+            display: flex;
+            gap: 32px;
+            align-items: center;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-700);
+            font-size: 15px;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+
+        .nav-links a:hover { color: var(--primary); }
+
+        .nav-cta {
+            background: var(--gradient);
+            color: var(--white) !important;
+            padding: 12px 24px;
+            border-radius: 50px;
+            font-weight: 600;
+        }
+
+        .nav-cta:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(99, 102, 241, 0.3);
+        }
+
+        .mobile-menu {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 8px;
+        }
+
+        .mobile-menu span {
+            width: 24px;
+            height: 2px;
+            background: var(--text-900);
+            border-radius: 2px;
+        }
+
+        /* Page Header */
+        .page-header {
+            padding: 160px 24px 80px;
+            background: linear-gradient(180deg, var(--primary-light) 0%, var(--white) 100%);
+            text-align: center;
+        }
+
+        .page-header h1 {
+            font-size: 52px;
+            color: var(--text-900);
+            margin-bottom: 20px;
+        }
+
+        .page-header h1 span {
+            background: var(--gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .page-header p {
+            font-size: 20px;
+            color: var(--text-500);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* Doctor Section */
+        .doctor-section {
+            padding: 100px 24px;
+            background: var(--white);
+        }
+
+        .doctor-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+            align-items: center;
+        }
+
+        .doctor-image {
+            position: relative;
+        }
+
+        .doctor-image-placeholder {
+            width: 100%;
+            height: 600px;
+            background: linear-gradient(135deg, #c7d2fe 0%, #a5f3fc 100%);
+            border-radius: 24px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .doctor-image-placeholder svg {
+            width: 80px;
+            height: 80px;
+            stroke: var(--text-400);
+            fill: none;
+            stroke-width: 1.5;
+            margin-bottom: 16px;
+        }
+
+        .doctor-image-placeholder span {
+            font-size: 18px;
+            font-weight: 600;
+            color: var(--text-500);
+        }
+
+        .doctor-badge {
+            position: absolute;
+            bottom: -20px;
+            right: -20px;
+            background: var(--white);
+            padding: 20px 28px;
+            border-radius: 16px;
+            box-shadow: 0 16px 40px rgba(0, 0, 0, 0.12);
+            text-align: center;
+        }
+
+        .doctor-badge-value {
+            font-family: 'Playfair Display', serif;
+            font-size: 36px;
+            font-weight: 700;
+            background: var(--gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .doctor-badge-label {
+            font-size: 14px;
+            color: var(--text-500);
+            font-weight: 500;
+        }
+
+        .doctor-content h2 {
+            font-size: 44px;
+            color: var(--text-900);
+            margin-bottom: 8px;
+        }
+
+        .doctor-title {
+            font-size: 18px;
+            color: var(--primary);
+            font-weight: 600;
+            margin-bottom: 24px;
+        }
+
+        .doctor-content > p {
+            font-size: 17px;
+            color: var(--text-500);
+            line-height: 1.8;
+            margin-bottom: 20px;
+        }
+
+        .doctor-credentials {
+            margin-top: 32px;
+            padding-top: 32px;
+            border-top: 1px solid var(--gray-200);
+        }
+
+        .doctor-credentials h4 {
+            font-family: 'DM Sans', sans-serif;
+            font-size: 14px;
+            font-weight: 600;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            color: var(--text-400);
+            margin-bottom: 16px;
+        }
+
+        .credentials-list {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .credential-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .credential-item svg {
+            width: 20px;
+            height: 20px;
+            stroke: var(--primary);
+            fill: none;
+            stroke-width: 2;
+            flex-shrink: 0;
+        }
+
+        .credential-item span {
+            font-size: 15px;
+            color: var(--text-700);
+        }
+
+        /* Mission Section */
+        .mission-section {
+            padding: 100px 24px;
+            background: var(--gray-50);
+        }
+
+        .mission-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .mission-header {
+            text-align: center;
+            margin-bottom: 64px;
+        }
+
+        .section-label {
+            display: inline-block;
+            font-size: 13px;
+            font-weight: 600;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: var(--primary);
+            margin-bottom: 16px;
+        }
+
+        .mission-header h2 {
+            font-size: 44px;
+            color: var(--text-900);
+            margin-bottom: 16px;
+        }
+
+        .mission-header p {
+            font-size: 18px;
+            color: var(--text-500);
+            max-width: 560px;
+            margin: 0 auto;
+        }
+
+        .mission-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 32px;
+        }
+
+        .mission-card {
+            background: var(--white);
+            padding: 40px 32px;
+            border-radius: 20px;
+            text-align: center;
+            border: 1px solid var(--gray-200);
+        }
+
+        .mission-icon {
+            width: 72px;
+            height: 72px;
+            background: var(--gradient);
+            border-radius: 18px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 24px;
+        }
+
+        .mission-icon svg {
+            width: 36px;
+            height: 36px;
+            stroke: white;
+            fill: none;
+            stroke-width: 1.5;
+        }
+
+        .mission-card h3 {
+            font-size: 24px;
+            color: var(--text-900);
+            margin-bottom: 12px;
+        }
+
+        .mission-card p {
+            font-size: 15px;
+            color: var(--text-500);
+            line-height: 1.7;
+        }
+
+        /* Team Section */
+        .team-section {
+            padding: 100px 24px;
+            background: var(--white);
+        }
+
+        .team-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .team-header {
+            text-align: center;
+            margin-bottom: 64px;
+        }
+
+        .team-header h2 {
+            font-size: 44px;
+            color: var(--text-900);
+            margin-bottom: 16px;
+        }
+
+        .team-header p {
+            font-size: 18px;
+            color: var(--text-500);
+            max-width: 560px;
+            margin: 0 auto;
+        }
+
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 32px;
+        }
+
+        .team-card {
+            text-align: center;
+        }
+
+        .team-image {
+            width: 100%;
+            aspect-ratio: 1;
+            background: linear-gradient(135deg, #e0e7ff 0%, #bae6fd 100%);
+            border-radius: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+
+        .team-image svg {
+            width: 48px;
+            height: 48px;
+            stroke: var(--text-400);
+            fill: none;
+            stroke-width: 1.5;
+            margin-bottom: 8px;
+        }
+
+        .team-image span {
+            font-size: 13px;
+            color: var(--text-400);
+            font-weight: 500;
+        }
+
+        .team-card h3 {
+            font-size: 20px;
+            color: var(--text-900);
+            margin-bottom: 4px;
+        }
+
+        .team-card p {
+            font-size: 14px;
+            color: var(--primary);
+            font-weight: 500;
+        }
+
+        /* Office Section */
+        .office-section {
+            padding: 100px 24px;
+            background: var(--text-900);
+        }
+
+        .office-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .office-header {
+            text-align: center;
+            margin-bottom: 64px;
+        }
+
+        .office-header .section-label {
+            color: var(--secondary);
+        }
+
+        .office-header h2 {
+            font-size: 44px;
+            color: var(--white);
+            margin-bottom: 16px;
+        }
+
+        .office-header p {
+            font-size: 18px;
+            color: var(--text-400);
+            max-width: 560px;
+            margin: 0 auto;
+        }
+
+        .office-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+        }
+
+        .office-image {
+            height: 280px;
+            background: linear-gradient(135deg, rgba(99, 102, 241, 0.3) 0%, rgba(14, 165, 233, 0.3) 100%);
+            border-radius: 16px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .office-image svg {
+            width: 48px;
+            height: 48px;
+            stroke: rgba(255, 255, 255, 0.5);
+            fill: none;
+            stroke-width: 1.5;
+            margin-bottom: 12px;
+        }
+
+        .office-image span {
+            font-size: 14px;
+            color: rgba(255, 255, 255, 0.5);
+            font-weight: 500;
+        }
+
+        /* CTA Section */
+        .cta {
+            padding: 100px 24px;
+            background: linear-gradient(135deg, var(--primary-light) 0%, var(--secondary-light) 100%);
+            text-align: center;
+        }
+
+        .cta-container {
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .cta h2 {
+            font-size: 44px;
+            color: var(--text-900);
+            margin-bottom: 20px;
+        }
+
+        .cta p {
+            font-size: 18px;
+            color: var(--text-500);
+            margin-bottom: 40px;
+        }
+
+        .btn-primary {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: var(--gradient);
+            color: var(--white);
+            padding: 16px 32px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 16px;
+            transition: all 0.3s;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 24px rgba(99, 102, 241, 0.35);
+        }
+
+        .btn-primary svg {
+            width: 18px;
+            height: 18px;
+        }
+
+        /* Footer */
+        .footer {
+            background: var(--text-900);
+            color: var(--white);
+            padding: 80px 24px 32px;
+        }
+
+        .footer-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .footer-top {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 64px;
+            margin-bottom: 64px;
+        }
+
+        .footer-brand .logo { margin-bottom: 20px; }
+        .footer-brand .logo-text { color: var(--white); }
+
+        .footer-brand p {
+            color: var(--text-400);
+            font-size: 15px;
+            line-height: 1.7;
+            margin-bottom: 24px;
+            max-width: 280px;
+        }
+
+        .footer-social {
+            display: flex;
+            gap: 12px;
+        }
+
+        .footer-social a {
+            width: 40px;
+            height: 40px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: background 0.2s;
+        }
+
+        .footer-social a:hover { background: var(--primary); }
+        .footer-social svg { width: 20px; height: 20px; fill: var(--white); }
+
+        .footer-column h4 {
+            font-family: 'DM Sans', sans-serif;
+            font-size: 14px;
+            font-weight: 600;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            color: var(--text-400);
+            margin-bottom: 24px;
+        }
+
+        .footer-column a {
+            display: block;
+            color: rgba(255, 255, 255, 0.7);
+            text-decoration: none;
+            font-size: 15px;
+            margin-bottom: 14px;
+            transition: color 0.2s;
+        }
+
+        .footer-column a:hover { color: var(--white); }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding-top: 32px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .footer-bottom p {
+            color: var(--text-400);
+            font-size: 14px;
+        }
+
+        .footer-bottom-links {
+            display: flex;
+            gap: 24px;
+        }
+
+        .footer-bottom-links a {
+            color: var(--text-400);
+            text-decoration: none;
+            font-size: 14px;
+        }
+
+        .footer-bottom-links a:hover { color: var(--white); }
+
+        /* Responsive */
+        @media (max-width: 1024px) {
+            .doctor-container {
+                grid-template-columns: 1fr;
+            }
+
+            .doctor-image {
+                max-width: 500px;
+                margin: 0 auto;
+            }
+
+            .mission-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .team-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .office-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-top {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav-links { display: none; }
+            .mobile-menu { display: flex; }
+
+            .page-header {
+                padding: 120px 24px 60px;
+            }
+
+            .page-header h1 {
+                font-size: 36px;
+            }
+
+            .doctor-content h2,
+            .mission-header h2,
+            .team-header h2,
+            .office-header h2 {
+                font-size: 32px;
+            }
+
+            .team-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-top {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-bottom {
+                flex-direction: column;
+                gap: 16px;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="nav">
+        <div class="nav-container">
+            <a href="index.html" class="logo">
+                <div class="logo-icon">
+                    <svg viewBox="0 0 24 24">
+                        <path d="M12 2C8 2 5 5 5 8.5c0 2.5 1.5 4.5 3 6v5.5c0 1.1.9 2 2 2h4c1.1 0 2-.9 2-2v-5.5c1.5-1.5 3-3.5 3-6C19 5 16 2 12 2z"/>
+                    </svg>
+                </div>
+                <span class="logo-text">Smile <span>Transformation</span></span>
+            </a>
+            <div class="nav-links">
+                <a href="about.html">About Us</a>
+                <a href="services.html">Treatments</a>
+                <a href="invisalign.html">Invisalign</a>
+                <a href="before-after.html">Results</a>
+                <a href="contact.html" class="nav-cta">Free Consultation</a>
+            </div>
+            <button class="mobile-menu" aria-label="Menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <h1>About <span>Our Practice</span></h1>
+        <p>Dedicated to creating beautiful, confident smiles for over 20 years in the Haddonfield community.</p>
+    </section>
+
+    <!-- Doctor Section -->
+    <section class="doctor-section">
+        <div class="doctor-container">
+            <div class="doctor-image">
+                <div class="doctor-image-placeholder">
+                    <svg viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+                    <span>Dr. Martinez Photo</span>
+                </div>
+                <div class="doctor-badge">
+                    <div class="doctor-badge-value">20+</div>
+                    <div class="doctor-badge-label">Years Experience</div>
+                </div>
+            </div>
+            <div class="doctor-content">
+                <h2>Dr. Elena Martinez</h2>
+                <div class="doctor-title">Board-Certified Orthodontist, DMD, MS</div>
+                <p>Dr. Martinez founded Smile Transformation Orthodontics with a simple mission: to provide exceptional orthodontic care in a warm, welcoming environment where every patient feels like family.</p>
+                <p>After completing her dental degree at the University of Pennsylvania and her orthodontic residency at Temple University, Dr. Martinez has dedicated her career to staying at the forefront of orthodontic innovation while never losing sight of what matters most—her patients.</p>
+                <p>When she's not transforming smiles, Dr. Martinez enjoys spending time with her family, hiking the local trails, and volunteering with organizations that provide dental care to underserved communities.</p>
+
+                <div class="doctor-credentials">
+                    <h4>Education & Certifications</h4>
+                    <div class="credentials-list">
+                        <div class="credential-item">
+                            <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+                            <span>DMD, University of Pennsylvania School of Dental Medicine</span>
+                        </div>
+                        <div class="credential-item">
+                            <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+                            <span>MS in Orthodontics, Temple University</span>
+                        </div>
+                        <div class="credential-item">
+                            <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+                            <span>Diplomate, American Board of Orthodontics</span>
+                        </div>
+                        <div class="credential-item">
+                            <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+                            <span>Invisalign Diamond Provider</span>
+                        </div>
+                        <div class="credential-item">
+                            <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+                            <span>Member, American Association of Orthodontists</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Mission Section -->
+    <section class="mission-section">
+        <div class="mission-container">
+            <div class="mission-header">
+                <div class="section-label">Our Values</div>
+                <h2>What We Stand For</h2>
+                <p>The principles that guide everything we do at Smile Transformation Orthodontics.</p>
+            </div>
+            <div class="mission-grid">
+                <div class="mission-card">
+                    <div class="mission-icon">
+                        <svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+                    </div>
+                    <h3>Patient-Centered Care</h3>
+                    <p>Every treatment plan is customized to your unique needs, goals, and lifestyle. We listen first, then create a plan that works for you.</p>
+                </div>
+                <div class="mission-card">
+                    <div class="mission-icon">
+                        <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                    </div>
+                    <h3>Excellence in Results</h3>
+                    <p>We're committed to delivering exceptional outcomes using the latest technology and evidence-based treatment approaches.</p>
+                </div>
+                <div class="mission-card">
+                    <div class="mission-icon">
+                        <svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+                    </div>
+                    <h3>Community First</h3>
+                    <p>We're proud to serve Haddonfield and the surrounding communities, giving back through volunteer work and affordable care options.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Team Section -->
+    <section class="team-section">
+        <div class="team-container">
+            <div class="team-header">
+                <div class="section-label">Our Team</div>
+                <h2>Meet the Smile Experts</h2>
+                <p>Our friendly, experienced team is here to make your orthodontic journey comfortable and enjoyable.</p>
+            </div>
+            <div class="team-grid">
+                <div class="team-card">
+                    <div class="team-image">
+                        <svg viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+                        <span>Photo</span>
+                    </div>
+                    <h3>Sarah</h3>
+                    <p>Treatment Coordinator</p>
+                </div>
+                <div class="team-card">
+                    <div class="team-image">
+                        <svg viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+                        <span>Photo</span>
+                    </div>
+                    <h3>Michael</h3>
+                    <p>Orthodontic Assistant</p>
+                </div>
+                <div class="team-card">
+                    <div class="team-image">
+                        <svg viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+                        <span>Photo</span>
+                    </div>
+                    <h3>Jessica</h3>
+                    <p>Patient Relations</p>
+                </div>
+                <div class="team-card">
+                    <div class="team-image">
+                        <svg viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+                        <span>Photo</span>
+                    </div>
+                    <h3>David</h3>
+                    <p>Lab Technician</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Office Section -->
+    <section class="office-section">
+        <div class="office-container">
+            <div class="office-header">
+                <div class="section-label">Our Office</div>
+                <h2>A Modern, Welcoming Space</h2>
+                <p>Our state-of-the-art facility is designed with your comfort in mind.</p>
+            </div>
+            <div class="office-grid">
+                <div class="office-image">
+                    <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+                    <span>Waiting Area</span>
+                </div>
+                <div class="office-image">
+                    <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+                    <span>Treatment Room</span>
+                </div>
+                <div class="office-image">
+                    <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+                    <span>3D Imaging Suite</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta">
+        <div class="cta-container">
+            <h2>Ready to Meet Our Team?</h2>
+            <p>Schedule your free consultation and see why families choose Smile Transformation for their orthodontic care.</p>
+            <a href="contact.html" class="btn-primary">
+                Book Your Consultation
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M5 12h14M12 5l7 7-7 7"/>
+                </svg>
+            </a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-top">
+                <div class="footer-brand">
+                    <a href="index.html" class="logo">
+                        <div class="logo-icon">
+                            <svg viewBox="0 0 24 24">
+                                <path d="M12 2C8 2 5 5 5 8.5c0 2.5 1.5 4.5 3 6v5.5c0 1.1.9 2 2 2h4c1.1 0 2-.9 2-2v-5.5c1.5-1.5 3-3.5 3-6C19 5 16 2 12 2z"/>
+                            </svg>
+                        </div>
+                        <span class="logo-text">Smile Transformation</span>
+                    </a>
+                    <p>Creating beautiful smiles in South Jersey for over 20 years.</p>
+                    <div class="footer-social">
+                        <a href="#" aria-label="Facebook">
+                            <svg viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+                        </a>
+                        <a href="#" aria-label="Instagram">
+                            <svg viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+                        </a>
+                        <a href="#" aria-label="YouTube">
+                            <svg viewBox="0 0 24 24"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z"/><polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"/></svg>
+                        </a>
+                    </div>
+                </div>
+                <div class="footer-column">
+                    <h4>Treatments</h4>
+                    <a href="services.html">Traditional Braces</a>
+                    <a href="invisalign.html">Invisalign</a>
+                    <a href="services.html">Clear Braces</a>
+                    <a href="services.html">Teen Orthodontics</a>
+                </div>
+                <div class="footer-column">
+                    <h4>Quick Links</h4>
+                    <a href="about.html">About Us</a>
+                    <a href="before-after.html">Before & After</a>
+                    <a href="contact.html">Contact</a>
+                    <a href="#">Patient Forms</a>
+                </div>
+                <div class="footer-column">
+                    <h4>Contact</h4>
+                    <a href="tel:856-555-0123">(856) 555-0123</a>
+                    <a href="mailto:info@smiletransformation.com">info@smiletransformation.com</a>
+                    <a href="#">123 Main Street<br>Haddonfield, NJ 08033</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Smile Transformation Orthodontics. All rights reserved.</p>
+                <div class="footer-bottom-links">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
